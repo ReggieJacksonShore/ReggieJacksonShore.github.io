@@ -31,8 +31,8 @@
 <meta name="copyright" content="Copyright. All rights reserved." /> 
 <meta name="author" content="Reggie Jackson Shore" />
 <meta name="publisher" content="Reggie Jackson Shore" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
+<meta name="keywords" content="Reggie Jackson Shore" />
+<meta name="description" content="Reggie Jackson Shore" />
 <meta name="distribution" content="Global" />
 <meta name="audience" content="all" />
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
@@ -40,7 +40,7 @@
 <link rel="canonical" href="https://www.ReggieJacksonShore.GitHub.io/" /> 
 <meta name="og:title" property="og:title" content="" />
 <meta name="twitter:card" content="" />
-<meta name="theme-color" content="White" />
+<meta name="theme-color" content="#1a252f" />
 <!-- favicon --->
 <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 <link rel="icon" href="./icon_32px.png" type="image/ico" />
@@ -97,6 +97,9 @@
 </head>
 
 <body id="page-top">
+
+    <button class="add-button">Add to home screen</button>
+
   
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-camelcase fixed-top" id="mainNav">
@@ -406,6 +409,8 @@
   </section>
 
   <style>
+    .add-button { position: fixed; bottom: 1px; left: 1px; }
+
     #mainNav {font-weight:700!important;}
     .masthead { padding-top: calc(6rem + 44px)!important; }
       .portfolio-item {border-radius:0!important;}
@@ -587,7 +592,7 @@
   <!-- Copyright Section -->
   <section class="copyright py-4 text-center text-white">
     <div class="container">
-      <small>Copyright &copy; Reggie Jackson Shore</small>
+      <small>Copyright. All rights reserved.</small>
     </div>
   </section>
 
@@ -1079,6 +1084,40 @@
 
   <!-- Custom scripts for this template -->
   <script src="./js/freelancer.min.js"></script>
+
+  <script>
+
+    let deferredPrompt;
+    const addBtn = document.querySelector('.add-button');
+    addBtn.style.display = 'none';
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+      // Update UI to notify the user they can add to home screen
+      addBtn.style.display = 'block';
+
+      addBtn.addEventListener('click', (e) => {
+        // hide our user interface that shows our A2HS button
+        addBtn.style.display = 'none';
+        // Show the prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the A2HS prompt');
+            } else {
+              console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+          });
+      });
+    });
+
+
+  </script>
 
 </body>
 
