@@ -10,7 +10,6 @@ importScripts('serviceworker-cache-polyfill.js');
 
 var CACHE_NAME = 'site-cache';
 var urlsToCache = [
-  './index.html',
   './vendor/jquery/jquery.min.js'
 ];
 
