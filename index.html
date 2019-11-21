@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no" />
 <meta name="robots" content="INDEX,FOLLOW" /> 
 <meta name="copyright" content="Copyright. All rights reserved." /> 
@@ -18,7 +18,7 @@
 <meta name="theme-color" content="#1a252f" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 <meta name="apple-mobile-web-app-title" content="Modern Furniture Store" />
 <meta name="msapplication-TileImage" content="./homescreen144.png" />
 <meta name="msapplication-TileColor" content="#1abc9c" />
@@ -65,16 +65,43 @@
 <meta name="msapplication-square310x310logo" content="./mstile-310x310.png" />
 <title>Reggie Jackson Shore</title>
 <script src="./js/jquery-3.4.1.min.js"></script>
-<link rel="manifest" href="./manifest.json">
-<link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-<link href="./css/freelancer.min.css" rel="stylesheet">
+<link href="./manifest.json" rel="manifest" />
+<link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+<link href="./css/freelancer.min.css" rel="stylesheet" type="text/css" />
 <style>
   body { background-color: #1a252f!important; }
   #mainNav {font-weight:700!important;}
   #profile, #softwaredevelopment, #portfolio { background-color: White!important; }
-  .add-button { position: fixed; bottom: 1px; left: 1px; }
+ 
+  button.add-button { 
+		margin:0; 
+		padding:12px; 
+    position: fixed; bottom: 1rem; left: 1rem; 
+    z-index: 9999;
+		width:auto;
+		color: #000; 
+		text-align:left;
+		background-color:#EAEAEA; 
+		background: linear-gradient(to bottom, #F1F1F1, #EAEAEA);
+		border:0;
+		border-radius:0px;
+		border-top:1px solid White;
+		outline:1px solid #CCC;
+		box-shadow:0 0 2px #999;
+		cursor:pointer;
+		transition:transform .2s; }
+	
+	button.add-button:hover {
+		text-decoration:none;
+		background: linear-gradient(to bottom, #EAEAEA, #F1F1F1); }
+		
+	button.add-button:active { box-shadow:inset 0 0 18px #999; }
+
+   
+
+
   .modal-content { border-radius:0!important; }
   .btn { border-radius:0!important; }
   .masthead { padding-top: calc(6rem + 44px)!important; }
@@ -101,9 +128,7 @@
                   alt="Reggie" 
                   style="float:left;margin-right:12px;height:42px;width:42px;box-shadow:0 0 24px #222; border-radius:0!important" />
             </td>
-            <td style="vertical-align:middle!important;">
-                Reggie
-            </td>
+            <td style="vertical-align:middle!important;">Reggie</td>
         </tr>
         </table>
       </a>
@@ -265,16 +290,11 @@
             <img 
               src="./img/RIT_Tigers_Logo.png" 
               alt="RIT Tigers" 
-              class="masthead-avatar" 
-              style="width:100%;max-width:360px;border:0 solid White; box-shadow:0 0 0 #2c3e50; border-radius:0!important;" />
+              style="max-width:300px;border:0 solid White; box-shadow:0 0 24p0x #2c3e50; border-radius:0!important;" />
           </p>
         
         </div>
 
-
-
-
-        
       </div>
       
     </div>
@@ -505,7 +525,6 @@
           </div>
 
       </div>
-      <!-- /.row -->
 
     </div>
   </section>
@@ -833,7 +852,7 @@
 
                 <!-- Portfolio Modal - Text -->
                 <p class="mt-5 mb-5">
-                   Developed e-commerce shopping cart style website featuring account management and integration with Authorize.net payment gateway.
+                  Developed e-commerce shopping cart style website featuring account management and integration with Authorize.net payment gateway.
                 </p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
@@ -900,9 +919,8 @@
                   </div>
                 <!-- Portfolio Modal - Text -->
                 <p class="mt-5 mb-5">
-
-                            Developed  prescription (eRx) routing web application to send, receive, and consume physician orders through the RelayHealth and Surescripts networks. 
-                          </p>
+                  Developed  prescription (eRx) routing web application to send, receive, and consume physician orders through the RelayHealth and Surescripts networks. 
+                </p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
@@ -929,7 +947,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-camelcase mb-0">Company intranet and custom web tools</h2>
+                <h2 class="portfolio-modal-title text-secondary text-camelcase mb-0">Company intranet and web tools</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                 </div>
@@ -972,10 +990,8 @@
                     </a>
                   </div>
                 <!-- Portfolio Modal - Text -->
-               
-                              <p class="mt-5 mb-5">
-
-                    Developed company intranet and web tools requiring complex data modeling for staff to better track, automate and improve efficiency of organizational workflows.
+                <p class="mt-5 mb-5">
+                  Developed company intranet and web tools requiring complex data modeling for staff to better track, automate and improve efficiency of organizational workflows.
                 </p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
@@ -1003,7 +1019,7 @@
               <div class="row justify-content-center">
                 <div class="col-lg-8">
                   <!-- Portfolio Modal - Title -->
-                  <h2 class="portfolio-modal-title text-secondary text-camelcase mb-0">Custom ad hoc parameterized web reportss</h2>
+                  <h2 class="portfolio-modal-title text-secondary text-camelcase mb-0">Custom ad hoc parameterized web reports</h2>
                   <!-- Icon Divider -->
                   <div class="divider-custom">
                   </div>
@@ -1038,9 +1054,8 @@
                     </div>
                   <!-- Portfolio Modal - Text -->
                   <p class="mt-5 mb-5">
-  
-                                    Developed custom ad hoc parameterized web reports requiring sophisticated or inferential techniques for admins and executives to visualize and analyze administrative data.
-                                 </p>
+                    Developed custom ad hoc parameterized web reports requiring sophisticated or inferential techniques for admins and executives to visualize and analyze administrative data.
+                  </p>
                   <button class="btn btn-primary" href="#" data-dismiss="modal">
                     <i class="fas fa-times fa-fw"></i>
                     Close Window
