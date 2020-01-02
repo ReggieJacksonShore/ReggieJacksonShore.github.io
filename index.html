@@ -13,8 +13,6 @@
 <meta name="distribution" content="Global" />
 <meta name="audience" content="all" />
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-<meta name="og:title" property="og:title" content="" />
-<meta name="twitter:card" content="" />
 <meta name="theme-color" content="#1a252f" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -64,39 +62,37 @@
 <meta name="msapplication-wide310x150logo" content="./mstile-310x150.png" />
 <meta name="msapplication-square310x310logo" content="./mstile-310x310.png" />
 <title>Reggie Jackson Shore</title>
-<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./vendor/jquery/jquery.min.js"></script>
 <link href="./manifest.json" rel="manifest" />
 <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
 <link href="./css/freelancer.min.css" rel="stylesheet" type="text/css" />
 <style>
   body { background-color: #1a252f!important; }
+  nav {border-bottom:12px solid #1a252f;}
   #mainNav {font-weight:700!important;}
   #profile, #softwaredevelopment, #portfolio { background-color: White!important; }
- 
+  b { font-weight:bold!important; }
   button.add-button { 
-		margin:0; 
-		padding:12px; 
-    position: fixed; bottom: 1rem; left: 1rem; 
-    z-index: 9999;
-		width:auto;
-		color: #000; 
-		text-align:left;
-		background-color:#EAEAEA; 
-		background: linear-gradient(to bottom, #F1F1F1, #EAEAEA);
-		border:0;
-		border-radius:0px;
-		border-top:1px solid White;
-		outline:1px solid #CCC;
-		box-shadow:0 0 2px #999;
-		cursor:pointer;
-		transition:transform .2s; }
-	
-	button.add-button:hover {
-		text-decoration:none;
-		background: linear-gradient(to bottom, #EAEAEA, #F1F1F1); }
-		
-	button.add-button:active { box-shadow:inset 0 0 18px #999; }
-
+    margin:0; 
+    padding:12px; 
+    position:fixed; bottom: 1rem; left: 1rem; 
+    z-index:9999;
+    width:auto;
+    color:Black; 
+    text-align:left;
+    background-color:#EAEAEA; 
+    background: linear-gradient(to bottom, LightGrey, WhiteSmoke);
+    border:0;
+    border-radius:0px;
+    border-top:1px solid WhiteSmoke;
+    outline:0px solid #CCC;
+    box-shadow:0 0 2px Black;
+    cursor:pointer;
+    transition:transform .2s; }
+  button.add-button:hover {
+    text-decoration:none;
+    background: linear-gradient(to bottom, #EAEAEA, #F1F1F1); }	
+  button.add-button:active { box-shadow:inset 0 0 18px #999; }
   .modal-content { border-radius:0!important; }
   .btn { border-radius:0!important; }
   .masthead { padding-top: calc(6rem + 44px)!important; }
@@ -107,26 +103,23 @@
 </head>
 <body id="page-top">
 
-    <button class="add-button">Add to home screen</button>
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-camelcase fixed-top" id="mainNav">
     <div class="container">
        
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <table>
-        <tr>
-            <td style="vertical-align:middle!important;">
-                <img 
-                  class="masthead-avatar" 
-                  src="./img/Reggie.jpg" 
-                  alt="Reggie" 
-                  style="float:left;margin-right:12px;height:42px;width:42px;box-shadow:0 0 24px #222; border-radius:0!important" />
-            </td>
-            <td style="vertical-align:middle!important;">Reggie</td>
-        </tr>
-        </table>
-      </a>
+      <table>
+      <tr>
+          <td style="vertical-align:middle!important;">
+              <img 
+                class="masthead-avatar" 
+                src="./img/Reggie.jpg" 
+                alt="Reggie" 
+                style="border:6px solid White;float:left;margin-right:12px;height:42px;width:42px;box-shadow:0 0 24px Black; border-radius:0!important" />
+          </td>
+          <td style="vertical-align:middle!important;">Reggie</td>
+      </tr>
+      </table></a>
       
       <button 
         type="button"
@@ -167,21 +160,19 @@
       <img 
         src="./img/Reggie.jpg" 
         alt="Reggie" 
-        class="masthead-avatar mb-5" 
-        style="border:0 solid White; box-shadow:0 0 24px #2c3e50; border-radius:0!important;" />
+        width="240px" height="240px"
+        class="masthead-avatar mt-3 mb-5" 
+        style="border:12px solid White;box-shadow:0 0 24px Black;border-radius:0!important;" />
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-camelcase mb-0">Software Engineer</h1>
 
       <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line" style="background-color:White!important"></div>
-      </div>
+      <!--<div class="divider-custom"><div class="divider-custom-line" style="background-color:White!important"></div></div> -->
 
       <!-- Masthead Subheading -->
-      <p class="masthead-subheading font-weight-light mb-0">
-        Hello, my name is Reggie and I'm a Software Engineer who enjoys developing for the web, 
-        learning about web technologies and pushing the limits of user experience and expectations in the browser. 
+      <p class="masthead-subheading font-weight-light mt-4 mb-0">
+        Hello, my name is Reggie and I'm a Software Engineer who enjoys developing for the web, learning about web technologies and pushing the limits of user experience and expectations in the browser. 
       </p>
 
       <!-- Social Icons -->
@@ -215,11 +206,7 @@
   <section class="page-section" id="profile">
     <div class="container">
 
-      <!-- Profile Section Heading -->
-      <h2 class="page-section-heading text-center text-camelcase text-secondary mb-0">Profile</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom"></div>
+      <h2 class="page-section-heading text-center text-camelcase text-secondary mb-4">Profile</h2>
 
       <!-- Profile Section Content -->
       <div class="row">
@@ -265,10 +252,7 @@
     <div class="container">
 
       <!-- Education Section Heading -->
-      <h2 class="page-section-heading text-center text-camelcase text-secondary mb-0">Education</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom"></div>
+      <h2 class="page-section-heading text-center text-camelcase text-secondary mb-4">Education</h2>
 
       <!-- Profile Section Content -->
       <div class="row">
@@ -276,7 +260,7 @@
         <div class="col-lg-12">
             
           <p class="lead text-center">          
-              <u>Rochester Institute of Technology,  November 2005</u><br />
+              <b>Rochester Institute of Technology,  November 2005</b><br />
               Bachelor of Science<br />
               Information Technology Major, Concentration in Web Development
           </p>
@@ -285,8 +269,8 @@
             <img 
               src="./img/RIT_Tigers.png" 
               alt="RIT Tigers" 
-              width=""
-              style="width:100%;max-width:400px;border:0 solid White; box-shadow:0 0 24p0x #2c3e50; border-radius:0!important;" />
+              width="width:100%"
+              style="max-width:200px;padding:6px;border:12px solid White; box-shadow:0 0 24px Black; border-radius:0!important;" />
           </p>
         
         </div>
@@ -301,35 +285,32 @@
     <div class="container">
 
       <!-- Profile Section Heading -->
-      <h2 class="page-section-heading text-center text-camelcase text-secondary mb-0">Software Development</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom"></div>
+      <h2 class="page-section-heading text-center text-camelcase text-secondary mb-4">Software Development</h2>
 
       <!-- Profile Section Content -->
       <div class="row">
         <div class="col-lg-4 ml-auto">
           <p class="lead">
-          <u>Web Development</u><br />
+          <b>Web Development</b><br />
             HTML5, CSS3, JavaScript, jQuery, AngularJS, ReactJS, AJAX, RESTful APIs, XML, JSON, ColdFusion, PHP, Node.js, npm, Express, Bootstrap, DataTables, Chart.js, RegEx
           </p>
           <p class="lead">   
-            <u>Database Development</u><br />
+            <b>Database Development</b><br />
             Microsoft SQL, Access, MySQLi, NoSQL, SQLite, MongoDB, Database Scripting
           </p>
           <p class="lead">    
-            <u>Programming Tools</u><br />
+            <b>Programming Tools</b><br />
             Microsoft Visual Studio Code, Adobe Creative Cloud, Postman, SonarQube
           </p>
           <p class="lead">    
-            <u>Business Tools</u><br />
+            <b>Business Tools</b><br />
             Microsoft Office, Outlook, SharePoint, Visio, PowerPoint, Teams, DevOps, Git, GitHub, Slack, Jira, Confluence
           </p>
         </div>
         <div class="col-lg-4 mr-auto">
           <p class="lead">
 
-            <u>Standards</u>
+            <b>Standards</b>
 
             <ul>
               <li>Software Development Life Cycle (SDLC)</li>
@@ -350,7 +331,7 @@
           </p>
           <p class="lead">
             
-            <u>Compliance and Security</u>
+            <b>Compliance and Security</b>
             <ul>
               <li>Open Web Application Security Project (OWASP)</li>
               <li>Payment Card Industry Data Security Standard (PCI DSS)</li>
@@ -362,6 +343,19 @@
         </div>
       </div>
 
+      <!-- Profile Section Content -->
+      <div class="row">
+        <div class="col-lg-12 ml-auto">
+
+          <p class="mt-4 lead text-center portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioDatatables">
+            <button
+              class="btn btn-xl btn-outline-dark" 
+              style="width:300px;"><i class="fas fa-book mr-2"></i> Knowledge Base</button>
+          </p>
+        
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -370,57 +364,34 @@
     <div class="container">
 
       <!-- Education Section Heading -->
-      <h2 class="page-section-heading text-center text-camelcase text-secondary mb-0">Work Experience</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom"></div>
+      <h2 class="page-section-heading text-center text-camelcase text-secondary mb-4">Work Experience</h2>
 
        <!-- Profile Section Content -->
        <div class="row">
         <div class="col-lg-12 mb-5">
           <p class="lead text-center">
-
-            <u>Northwell Health, Computer System Analyst</u><br />(August 2018 - Present)
-        
+            <b>Northwell Health, Computer System Analyst</b><br />(August 2018 - Present)
             <ul>
-              <li>
-                Developed electronic data capture (EDC) systems including reporting and exporting modules to aid research community (Principal Investigators, Research Coordinators, and Statisticians) with their data management needs in the clinical trial arena.
-              </li>
-              <li>
-                Developed department website to better educate researchers on the research process, department core missions, and service lines.
-              </li>
-              <li>
-                  Developed custom ad hoc web hooks and plugins that make use of existing third-party systems.
-              </li>
+              <li>Developed electronic data capture (EDC) systems including reporting and exporting modules to aid research community (Principal Investigators, Research Coordinators, and Statisticians) with their data management needs in the clinical trial arena.</li>
+              <li>Developed department website to better educate researchers on the research process, department core missions, and service lines.</li>
+              <li>Developed custom ad hoc web hooks and plugins that make use of existing third-party systems.</li>
             </ul>
           </p>
-
         </div>
       </div>
-
-      <!-- Profile Section Content -->
       <div class="row">
         <div class="col-lg-12 mb-5">
           <p class="lead text-center">
-            <u>Better Living Now, Web Developer</u><br />(March 2005 - August 2018)
+            <b>Better Living Now, Web Developer</b><br />(March 2005 - August 2018)
             <ul>
-              <li>
-                Developed e-commerce shopping cart style website featuring account management and integration with Authorize.net payment gateway. 
-              </li>
-              <li>
-                Developed prescription (eRx) routing web application to send, receive, and consume physician orders through the RelayHealth and Surescripts networks. 
-              </li>
-              <li>
-                Developed company intranet and web tools requiring complex data modeling for staff to better track, automate and improve efficiency of organizational workflows. 
-              </li>
-              <li>
-                Developed custom ad hoc parameterized web reports requiring sophisticated or inferential techniques for admins and executives to visualize and analyze administrative data.
-              </li>
+              <li>Developed e-commerce shopping cart style website featuring account management and integration with Authorize.net payment gateway.</li>
+              <li>Developed prescription (eRx) routing web application to send, receive, and consume physician orders through the RelayHealth and Surescripts networks.</li>
+              <li>Developed company intranet and web tools requiring complex data modeling for staff to better track, automate and improve efficiency of organizational workflows.</li>
+              <li>Developed custom ad hoc parameterized web reports requiring sophisticated or inferential techniques for admins and executives to visualize and analyze administrative data.</li>
             </ul>
           </p>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -429,10 +400,7 @@
     <div class="container">
 
       <!-- Portfolio Section Heading -->
-      <h2 class="page-section-heading text-center text-camelcase text-secondary mb-0">Portfolio</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom"></div>
+      <h2 class="page-section-heading text-center text-camelcase text-secondary mb-4">Portfolio</h2>
 
       <!-- Portfolio Grid Items -->
       <div class="row">
@@ -448,7 +416,6 @@
             <img class="img-fluid" src="./img/Electronic_data_capture_system_home_page.jpg" alt="">
           </div>
         </div>
-
 
         <!-- Portfolio Item A -->
         <div class="col-md-6 col-lg-4">
@@ -558,18 +525,45 @@
 
         <!-- Footer Location -->
         <div class="col-lg-4 mb-5 mb-lg-0">
-          
-          <h4 class="text-camelcase mb-4">Location</h4>
-          
+
+          <h4 class="text-camelcase mb-4">About Me</h4>
           <p class="lead mb-3">
-            Greater New York City Area<br />
-            Relocation NY, NJ, PA, CT, DE, VA, NC
+              Hello, my name is Reggie and I'm a Software Engineer who enjoys developing for the web, 
+              learning about web technologies and pushing the limits of user experience and expectations in the browser. 
           </p>
+          <p class="lead mb-0">
+            <a href="https://www.linkedin.com/in/ReggieJacksonShore" target="_blank">Connect with me on LinkedIn.</a>
+          </p>         
 
         </div>
 
         <!-- Social Icons -->
-        <div class="col-lg-4 mb-5 mt-5 mb-lg-0">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+
+
+  
+          <h4 class="text-camelcase mb-4">Progressive Web Apps</h4>
+          
+          <p class="lead mt-4 mb-4">
+            This website is installable! Progressive Web Apps (PWAs) are special websites built using common web technologies, 
+            but can appear to the user and function similar to traditional or native mobile applications. </p>      
+
+          <p class="lead mb-0 add-button">
+              <a href="javascript:void(0);">Click here to install this website.</a>
+          </p>
+
+        </div>
+
+        <!-- Footer About Text -->
+        <div class="col-lg-4">
+
+          <h4 class="text-camelcase mb-4">Location</h4>
+          
+          <p class="lead mb-4">
+            Greater New York City Area<br />
+            Relocation NY, NJ, PA, CT, DE, VA, NC
+          </p>
+
           <a class="btn btn-outline-light btn-social mx-1" 
             style="border-radius:50%!important;"
             href="https://www.linkedin.com/in/ReggieJacksonShore" target="_blank">
@@ -589,19 +583,11 @@
             style="border-radius:50%!important;"
             href="https://www.dropbox.com/sh/y9pl1gbpgjo3etm/AABUSpWFJ0U_zTVT3pGAJY8ea?dl=0" target="_blank">
             <i class="fab fa-fw fa-dropbox"></i>
-          </a>
-        </div>
+          </a>    
+          <!-- <button class="add-button"><i class="fas fa-plus-circle mr-2"></i> Install</button> -->
 
-        <!-- Footer About Text -->
-        <div class="col-lg-4">
-          <h4 class="text-camelcase mb-4">About Me</h4>
-          <p class="lead mb-3">
-              Hello, my name is Reggie and I'm a Software Engineer who enjoys developing for the web, 
-              learning about web technologies and pushing the limits of user experience and expectations in the browser. 
-          </p>
-          <p class="lead mb-0">
-              Connect with me on <a href="https://www.linkedin.com/in/ReggieJacksonShore" target="_blank">LinkedIn</a>.
-          </p>
+          
+
         </div>
 
       </div>
@@ -611,7 +597,7 @@
   <!-- Copyright Section -->
   <section class="copyright py-4 text-center text-white">
     <div class="container">
-      <small>Copyright. All rights reserved.</small>
+      <small>&copy;All rights reserved.</small>
     </div>
   </section>
 
@@ -621,6 +607,77 @@
       class="js-scroll-trigger d-block text-center text-white" 
       href="#page-top"><i class="fa fa-chevron-up"></i>
     </a>
+  </div>
+
+
+  <!-- Portfolio Datatables -->
+  <div class="portfolio-modal modal fade" id="portfolioDatatables" tabindex="-1" role="dialog" aria-labelledby="portfolioDatatablesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-camelcase mb-0">Knowledge Base</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <!-- <img class="img-fluid rounded mb-5" src="img/cabin.png" alt=""> -->
+
+                
+<script src="./vendor/jquery.dataTables.min.js"></script>
+<link href="./vendor/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+                
+                
+                <table id="example" class="display" width="100%" style="overflow-x: scroll";></table>
+
+<script>
+
+var dataSet = [
+["Web Development, JavaScript","splice()","The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.","https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" ]
+,["Web Development, JavaScript","split()","The split() method turns a String into an array of strings, by separating the string at each instance of a specified separator string.","https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split" ]
+,["Web Development, JavaScript","ECMAScript 6","ECMAScript 6 is also known as ES6 and ECMAScript 2015. Some people call it JavaScript 6. New features in ES6: JavaScript let, JavaScript const, JavaScript Arrow Functions, JavaScript Classes, Default parameter values, Array.find(), Array.findIndex(), Exponentiation (**) (EcmaScript 2016)","https://www.w3schools.com/js/js_es6.asp"]
+
+];
+
+$(document).ready(function() {
+  $('#example').DataTable( {      
+    "scrollX": true,
+    data: dataSet,
+    columns: [
+    { title: "Category" },
+    { title: "Name" },
+    { title: "Description" },
+    { title: "Link" }
+    ]
+  } );
+} );
+
+</script>
+
+                <!-- Portfolio Modal - Text -->
+                <p class="mt-5 mb-5">
+                  A collection of software development technologies, references and guidelines.
+                </p>
+                <button 
+                  class="btn btn-primary" 
+                  href="#" 
+                  data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Portfolio Modal 1 -->
@@ -695,7 +752,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- Portfolio Modal 1 -->
   <div class="portfolio-modal modal fade" id="portfolioModalA" tabindex="-1" role="dialog" aria-labelledby="portfolioModalALabel" aria-hidden="true">
@@ -1160,7 +1216,6 @@
       </div>
     </div>
 
-
   <!-- Portfolio Modal B -->
   <div class="portfolio-modal modal fade" id="portfolioModalB" tabindex="-1" role="dialog" aria-labelledby="portfolioModalBLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
@@ -1223,32 +1278,23 @@
       </div>
     </div>
   </div>
-
-<!-- Bootstrap core JavaScript -->
-<script src="./vendor/jquery/jquery.min.js"></script>
+<!-- Bootstrap Javascript. -->
 <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 <!-- Plugin JavaScript -->
 <script src="./vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Contact Form JavaScript -->
-<script src="./js/jqBootstrapValidation.js"></script>
-<script src="./js/contact_me.js"></script>
-
 <!-- Custom scripts for this template -->
 <script src="./js/freelancer.min.js"></script>
-
 <script>
 
-  console.log('Service worker initializing...');
+  // console.log('Service worker initializing...');
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js')
     .then(function(registration) {
-      console.log('Service worker registration successful with scope: ', registration.scope);
+      // console.log('Service worker registration successful with scope: ', registration.scope);
     })
     .catch(function(error) {
-      console.log('Service worker registration failed: ', error);
+      // console.log('Service worker registration failed: ', error);
     });
   }
 
@@ -1272,16 +1318,14 @@
       // Wait for the user to respond to the prompt
       deferredPrompt.userChoice.then((choiceResult) => {
           if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
+            // console.log('User accepted the A2HS prompt');
           } else {
-            console.log('User dismissed the A2HS prompt');
+            // console.log('User dismissed the A2HS prompt');
           }
           deferredPrompt = null;
         });
     });
   });
-
 </script>
-
 </body>
 </html>

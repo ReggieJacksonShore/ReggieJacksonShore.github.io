@@ -6,7 +6,7 @@ console.log('Service worker setup...');
 // 2. Cache our files.
 // 3. Confirm whether all the required assets are cached or not.
 
-importScripts('serviceworker-cache-polyfill.js');
+// importScripts('serviceworker-cache-polyfill.js');
 
 var CACHE_NAME = 'site-cache';
 var urlsToCache = [
