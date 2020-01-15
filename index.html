@@ -68,7 +68,7 @@
 <link href="./css/freelancer.min.css" rel="stylesheet" type="text/css" />
 <style>
   body { background-color: #1a252f!important; }
-  nav {border-bottom:12px solid #1a252f;}
+  nav {border-bottom:0px solid #1a252f;}
   #mainNav {font-weight:700!important;}
   #profile, #softwaredevelopment, #portfolio { background-color: White!important; }
   b { font-weight:bold!important; }
@@ -115,7 +115,7 @@
                 class="masthead-avatar" 
                 src="./img/Reggie.jpg" 
                 alt="Reggie" 
-                style="border:6px solid White;float:left;margin-right:12px;height:42px;width:42px;box-shadow:0 0 24px Black; border-radius:0!important" />
+                style="border:0px solid White;float:left;margin-right:12px;height:42px;width:42px;box-shadow:0 0 24px Black; border-radius:0!important" />
           </td>
           <td style="vertical-align:middle!important;">Reggie</td>
       </tr>
@@ -162,7 +162,7 @@
         alt="Reggie" 
         width="240px" height="240px"
         class="masthead-avatar mt-3 mb-5" 
-        style="border:12px solid White;box-shadow:0 0 24px Black;border-radius:0!important;" />
+        style="border:0px solid White;box-shadow:0 0 24px Black;border-radius:0!important;" />
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-camelcase mb-0">Software Engineer</h1>
@@ -270,7 +270,7 @@
               src="./img/RIT_Tigers.png" 
               alt="RIT Tigers" 
               width="width:100%"
-              style="max-width:200px;padding:6px;border:12px solid White; box-shadow:0 0 24px Black; border-radius:0!important;" />
+              style="max-width:200px;padding:12px;border:0px solid White; box-shadow:0 0 24px Black; border-radius:0!important;" />
           </p>
         
         </div>
@@ -586,8 +586,6 @@
           </a>    
           <!-- <button class="add-button"><i class="fas fa-plus-circle mr-2"></i> Install</button> -->
 
-          
-
         </div>
 
       </div>
@@ -609,7 +607,6 @@
     </a>
   </div>
 
-
   <!-- Portfolio Datatables -->
   <div class="portfolio-modal modal fade" id="portfolioDatatables" tabindex="-1" role="dialog" aria-labelledby="portfolioDatatablesLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
@@ -630,38 +627,62 @@
                 </div>
                 <!-- Portfolio Modal - Image -->
                 <!-- <img class="img-fluid rounded mb-5" src="img/cabin.png" alt=""> -->
+        
+                <script src="./vendor/jquery.dataTables.min.js"></script>
+                <link href="./vendor/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 
-                
-<script src="./vendor/jquery.dataTables.min.js"></script>
-<link href="./vendor/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-
-                
-                
                 <table id="example" class="display" width="100%" style="overflow-x: scroll";></table>
 
-<script>
+                <script>
 
-var dataSet = [
-["Web Development, JavaScript","splice()","The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.","https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" ]
-,["Web Development, JavaScript","split()","The split() method turns a String into an array of strings, by separating the string at each instance of a specified separator string.","https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split" ]
-,["Web Development, JavaScript","ECMAScript 6","ECMAScript 6 is also known as ES6 and ECMAScript 2015. Some people call it JavaScript 6. New features in ES6: JavaScript let, JavaScript const, JavaScript Arrow Functions, JavaScript Classes, Default parameter values, Array.find(), Array.findIndex(), Exponentiation (**) (EcmaScript 2016)","https://www.w3schools.com/js/js_es6.asp"]
+                var dataSet = [
+                ["Web Development","JavaScript, splice()","The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.","https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" ]
+                ,["Web Development","JavaScript, split()","The split() method turns a String into an array of strings, by separating the string at each instance of a specified separator string.","https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split" ]
+                ,["Web Development","JavaScript, ECMAScript 6","ECMAScript 6 is also known as ES6 and ECMAScript 2015. Some people call it JavaScript 6. New features in ES6: JavaScript let, JavaScript const, JavaScript Arrow Functions, JavaScript Classes, Default parameter values, Array.find(), Array.findIndex(), Exponentiation (**) (EcmaScript 2016)","https://www.w3schools.com/js/js_es6.asp"]
+                ,["Web Development","RESTful APIs","Representational state transfer (REST) is a software architectural style that defines a set of constraints to be used for creating Web services. Web services that conform to the REST architectural style, called RESTful Web services, provide interoperability between computer systems on the Internet. ","https://en.wikipedia.org/wiki/Representational_state_transfer"]
+                
+                ,["Standards","Software Development Life Cycle (SDLC)","A process for planning, creating, testing, and deploying an information system. The systems development life cycle concept applies to a range of hardware and software configurations, as a system can be composed of hardware only, software only, or a combination of both.[2] There are usually six stages in this cycle: requirement analysis, design, development and testing, implementation, documentation, and evaluation.","https://en.wikipedia.org/wiki/Systems_development_life_cycle"]
+                ,["Standards","Project Management Life Cycle (PMLC)","The practice of initiating, planning, executing, controlling, and closing the work of a team to achieve specific goals and meet specific success criteria at the specified time. The primary challenge of project management is to achieve all of the project goals within the given constraints.","https://en.wikipedia.org/wiki/Project_management"]
+                ,["Standards","User Interface/Experience Design (UI/UX)","",""]
+                ,["Standards","Responsive Web Design (RWD)","An approach to web design that makes web pages render well on a variety of devices and window or screen sizes.","https://en.wikipedia.org/wiki/Responsive_web_design"]
+                ,["Standards","Single-page Application (SPA)","A web application or web site that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from a server. This approach avoids interruption of the user experience between successive pages, making the application behave more like a desktop application.","https://en.wikipedia.org/wiki/Single-page_application"]
+                ,["Standards","Progressive Web App (PWA)", "A progressive web application (PWA) is a type of application software delivered through the web, built using common web technologies including HTML, CSS and JavaScript. It is intended to work on any platform that uses a standards-compliant browser. Functionality includes working offline, push notifications, and device hardware access, enabling creating user experiences similar to native applications on desktop and mobile devices.", "https://en.wikipedia.org/wiki/Progressive_web_application"]
+                ,["Standards","Web Services (WS)","A server running on a computer device, listening for requests at a particular port over a network, serving web documents (HTML, JSON, XML, Images), and creating web applications services, which serve in solving specific domain problems over the web. (i.e. www, internet, HTTP)","https://en.wikipedia.org/wiki/Web_service"]
+                ,["Standards","Service-Oriented Architect (SOA)","A style of software design where services are provided to the other components by application components, through a communication protocol over a network.","https://en.wikipedia.org/wiki/Service-oriented_architecture"]
+                ,["Standards","Object-Oriented Programming (OOP)","A programming paradigm based on the concept of \"objects\", which can contain data, in the form of fields (often known as attributes or properties), and code, in the form of procedures (often known as methods).","https://en.wikipedia.org/wiki/Object-oriented_programming"]
+                ,["Standards","Model-View-Controller (MVC)","Model–view–controller (usually known as MVC) is a software design pattern commonly used for developing user interfaces which divides the related program logic into three interconnected elements. This is done to separate internal representations of information from the ways information is presented to and accepted from the user. Following the MVC architectural pattern decouples these major components allowing for code reuse and parallel development.","https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"]
+                ,["Standards","Software Quality Assurance (SQA)","A means of monitoring the software engineering processes and methods used to ensure proper quality. This is accomplished by many and varied approaches. It may include ensuring conformance to one or more standards.","https://en.wikipedia.org/wiki/Software_quality_assurance"]
+                ,["Standards","User Acceptance Testing (UAT)","Acceptance criteria are the criteria that a system or component must satisfy in order to be accepted by a user, customer, or other authorized entity.","https://en.wikipedia.org/wiki/Acceptance_testing"]
+                ,["Standards","DevOps (Agile Scrum)","A set of practices that combines software development (Dev) and information-technology operations (Ops) which aims to shorten the systems development life cycle and provide continuous delivery with high software quality.","https://en.wikipedia.org/wiki/DevOps"]
 
-];
+                ,["Compliance and Security","Open Web Application Security Project (OWASP)","An online community that produces freely-available articles, methodologies, documentation, tools, and technologies in the field of web application security.","https://en.wikipedia.org/wiki/OWASP"]
+                ,["Compliance and Security","Payment Card Industry Data Security Standard (PCI DSS)","An information security standard for organizations that handle branded credit cards from the major card schemes.","https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard"]
+                ,["Compliance and Security","Health Insurance Portability and Accountability (HIPAA)","Created primarily to modernize the flow of healthcare information, stipulate how Personally Identifiable Information maintained by the healthcare and healthcare insurance industries should be protected from fraud and theft, and address limitations on healthcare insurance coverage.","https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act"]
+                ,["Compliance and Security","Protected Health Information (PHI)","Under the US law is any information about health status, provision of health care, or payment for health care that is created or collected by a Covered Entity (or a Business Associate of a Covered Entity), and can be linked to a specific individual. This is interpreted rather broadly and includes any part of a patient's medical record or payment history.","https://en.wikipedia.org/wiki/Protected_health_information"]
 
-$(document).ready(function() {
-  $('#example').DataTable( {      
-    "scrollX": true,
-    data: dataSet,
-    columns: [
-    { title: "Category" },
-    { title: "Name" },
-    { title: "Description" },
-    { title: "Link" }
-    ]
-  } );
-} );
+                ];
 
-</script>
+                $(document).ready(function() {
+                  $('#example').DataTable( {      
+                    "scrollX": true,
+                    data: dataSet,
+                    "ordering": false,
+                    columns: [
+                    { title: "Category" },
+                    { title: "Name" },
+                    { title: "Description" },
+                    { title: "Link" }
+                    ],
+                    columnDefs: [{
+                      "targets": 3,
+                      "render": function ( data, type, row, meta ) {
+                      return '<a class="btn btn-outline-dark btn-social mx-1" style="border-radius:50%!important;" href="' + data + '" target="_blank"><i class="fas fa-link"></i></a>';
+                    }}
+                    ]
+                  } );
+                } );
+
+                </script>
 
                 <!-- Portfolio Modal - Text -->
                 <p class="mt-5 mb-5">
