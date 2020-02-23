@@ -557,8 +557,8 @@
           <h4 class="text-camelcase mb-4">Location</h4>
           
           <p class="lead mb-4">
-            Greater New York City Area<br />
-            Relocation NY, NJ, PA, CT, DE, VA, NC
+            Greater New York City Area<!-- <br />
+            Relocation NY, NJ, PA, CT, DE, VA, NC -->
           </p>
 
           <a class="btn btn-outline-light btn-social mx-1" 
@@ -648,7 +648,7 @@
 
                   <span id="Pattern">Select Regular Expression</span><br /><br />
                   
-                  <select size="1" name="myAlgorithm" onChange="SelectPattern(this.value);" style=""> 
+                  <select size="1" name="myAlgorithm" onChange="SelectPattern(this.value);" style="max-width:100%!important;"> 
                   
                     <option value="" selected="selected" disabled="disabled"></option> 
                     
@@ -1028,7 +1028,7 @@
                 <script src="./vendor/jquery.dataTables.min.js"></script>
                 <link href="./vendor/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 
-                <table id="example" class="display" width="100%!important;" style="overflow-x: scroll";>
+                <table id="example" class="display" width="100%!important;">
                   <thead>
                     <tr>
                         <th>Category</th>
@@ -1111,7 +1111,8 @@
 
                 $(document).ready(function() {
                   $('#example').DataTable( {      
-                    //"scrollX": true,
+                    "scrollX": true,
+                    autoWidth : true,
                     data: dataSet,
                     "ordering": false,
                     columns: [
@@ -1733,7 +1734,7 @@
                   </div>
                 <!-- Portfolio Modal - Text -->
                 <p class="mt-5 mb-5">
-                  Developed health education website to better education patients on chronic conditions and health related products.
+                  Developed health education website to better educate patients on chronic conditions and health related products.
                 </p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
