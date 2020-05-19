@@ -6,7 +6,7 @@
    "background_color": "#1abc9c",
    "description": "Reggie Jackson Shore GitHub Page.",
    "scope": "./",
-   "theme_color": "#1a252f",
+   "theme_color": "#1abc9c",
    "icons": [{
      "src": "./homescreen48.png",
      "sizes": "48x48",

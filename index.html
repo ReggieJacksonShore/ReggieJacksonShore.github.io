@@ -13,7 +13,7 @@
   <meta name="distribution" content="Global" />
   <meta name="audience" content="all" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-  <meta name="theme-color" content="#1a252f" />
+  <meta name="theme-color" content="#1abc9c" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -21,7 +21,7 @@
   <meta name="msapplication-TileImage" content="./homescreen144.png" />
   <meta name="msapplication-TileColor" content="#1abc9c" />
   <meta name="msapplication-starturl" content="./index.php" />
-  <meta name="msapplication-navbutton-color" content="#1a252f" />
+  <meta name="msapplication-navbutton-color" content="#1abc9c" />
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
   <link rel="canonical" href="https://www.ReggieJacksonShore.GitHub.io/" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
@@ -75,11 +75,11 @@
   <link href="./css/freelancer.min.css" rel="stylesheet" type="text/css" />
   <style>
     body {
-      background-color: #1a252f !important;
+      background-color: #1abc9c !important;
     }
     
     nav {
-      border-bottom: 0px solid #1a252f;
+      border-bottom: 0px solid #1abc9c;
     }
 
     #mainNav {
@@ -106,10 +106,10 @@
 
     #mainNav .navbar-nav>li.nav-item>a.nav-link.active { 
       border-radius: 0 !important;
-      box-shadow: 0 0 0 #1a252f !important;
+      box-shadow: 0 0 0 #1abc9c !important;
     }
     #mainNav .navbar-toggler {   
-      box-shadow: 0 0 0 #1a252f !important;
+      box-shadow: 0 0 0 #1abc9c !important;
      }
 
     .masthead {
@@ -121,12 +121,28 @@
     }
 
     .portfolio-item:hover {
-      box-shadow: 0 0 0 #1a252f !important;
+      box-shadow: 0 0 0 #1abc9c !important;
     }
 
     .navbar-toggler {
       border-radius: 0 !important;
     }
+
+    a.LightGrey { 
+          padding:12px 12px!important; 
+          border:0px solid DarkGrey!important;
+          border-top:1px solid LightGrey!important;
+          color:#2c3e50!important;
+          background:linear-gradient(to bottom, DarkGrey, LightGrey); 
+          box-shadow:0 0 6px rgba(0, 0, 0, .75);
+    }
+    
+    a.LightGrey:hover { 
+      padding:12px 12px!important; 
+      background:linear-gradient(to bottom, LightGrey, DarkGrey); }
+
+    a:active { border:0px solid DarkGrey!important; }
+
   </style>
 </head>
 <body id="page-top">
@@ -180,7 +196,7 @@
 
       <!-- Masthead Avatar Image -->
       <img src="./img/Reggie.jpg" alt="Reggie" width="240px" height="240px" class="masthead-avatar mt-3 mb-5"
-        style="border:0px solid White;box-shadow:0 0 24px#2c3e50;border-radius:0!important;" />
+        style="border:0px solid White;box-shadow:0 0 12px rgba(0, 0, 0, 0.75);border-radius:0!important;" />
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-camelcase mb-0">Software Engineer</h1>
@@ -196,21 +212,25 @@
 
       <!-- Social Icons -->
       <div class="col-lg-4 mb-5 mt-5 mb-lg-0">
-        <a class="btn btn-outline-light btn-social mx-1" style="border-radius:50%!important;"
+        <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
           href="https://www.linkedin.com/in/ReggieJacksonShore" target="_blank">
           <i class="fab fa-fw fa-linkedin-in"></i>
         </a>
-        <a class="btn btn-outline-light btn-social mx-1" style="border-radius:50%!important;"
+        <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
           href="https://facebook.com/ReggieJacksonShore" target="_blank">
           <i class="fab fa-fw fa-facebook-f"></i>
         </a>
-        <a class="btn btn-outline-light btn-social mx-1" style="border-radius:50%!important;"
+        <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
           href="https://www.github.com/ReggieJacksonShore" target="_blank">
           <i class="fab fa-fw fa-github"></i>
         </a>
-        <a class="btn btn-outline-light btn-social mx-1" style="border-radius:50%!important;"
+        <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
           href="https://www.dropbox.com/sh/y9pl1gbpgjo3etm/AABUSpWFJ0U_zTVT3pGAJY8ea?dl=0" target="_blank">
           <i class="fab fa-fw fa-dropbox"></i>
+        </a>
+        <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
+          href="https://www.ReggieJacksonShore.com" target="_blank">
+          <i class="fab fa-fw fa-aws"></i>
         </a>
       </div>
 
@@ -240,9 +260,9 @@
         <div class="col-lg-12 ml-auto">
 
           <p class="mt-4 lead text-center">
-            <a class="btn btn-xl btn-outline-dark" 
-              style="width:300px;box-shadow: 0 0 0 #1a252f !important;" target="_blank"
-              href="https://www.dropbox.com/sh/y9pl1gbpgjo3etm/AACaIiAlzZcZ-vLBIBhMl_daa/Resume?dl=0&preview=Reggie+Shore+Resume.pdf"><i
+            <a class="btn btn-xl btn-outline-dark LightGrey" 
+              style="width:600px;max-width:100%;" target="_blank"
+              href="https://www.dropbox.com/sh/y9pl1gbpgjo3etm/AADDbjXFm1s3YMT6qrDpC97Ba/Resume/Reggie%20Shore%20Resume.docx?dl=0"><i
                 class="fas fa-download mr-2"></i> Resume</a>
           </p>
 
@@ -585,21 +605,25 @@
             Relocation NY, NJ, PA, CT, DE, VA, NC -->
           </p>
 
-          <a class="btn btn-outline-light btn-social mx-1" style="border-radius:50%!important;"
+          <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
             href="https://www.linkedin.com/in/ReggieJacksonShore" target="_blank">
             <i class="fab fa-fw fa-linkedin-in"></i>
           </a>
-          <a class="btn btn-outline-light btn-social mx-1" style="border-radius:50%!important;"
+          <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
             href="https://facebook.com/ReggieJacksonShore" target="_blank">
             <i class="fab fa-fw fa-facebook-f"></i>
           </a>
-          <a class="btn btn-outline-light btn-social mx-1" style="border-radius:50%!important;"
+          <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
             href="https://www.github.com/ReggieJacksonShore" target="_blank">
             <i class="fab fa-fw fa-github"></i>
           </a>
-          <a class="btn btn-outline-light btn-social mx-1" style="border-radius:50%!important;"
+          <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
             href="https://www.dropbox.com/sh/y9pl1gbpgjo3etm/AABUSpWFJ0U_zTVT3pGAJY8ea?dl=0" target="_blank">
             <i class="fab fa-fw fa-dropbox"></i>
+          </a>
+          <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
+            href="https://www.ReggieJacksonShore.com" target="_blank">
+            <i class="fab fa-fw fa-aws"></i>
           </a>
           <!-- <button class="add-button"><i class="fas fa-plus-circle mr-2"></i> Install</button> -->
 
@@ -1100,7 +1124,7 @@
                       columnDefs: [{
                         "targets": 3,
                         "render": function (data, type, row, meta) {
-                          return '<a class="btn btn-outline-dark btn-social mx-1" style="border-radius:50%!important;" href="' + data + '" target="_blank"><i class="fas fa-link"></i></a>';
+                          return '<a class="btn btn-outline-dark btn-social mx-1" style="border-radius:0%!important;" href="' + data + '" target="_blank"><i class="fas fa-link"></i></a>';
                         }
                       }
                       ]
