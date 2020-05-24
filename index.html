@@ -69,7 +69,7 @@
   <meta name="msapplication-wide310x150logo" content="./mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="./mstile-310x310.png" />
   <title>Reggie Jackson Shore</title>
-  <script src="./vendor/jquery/jquery.min.js"></script>
+  <script src="./vendor/jquery/jquery-3.5.1.min.js"></script>
   <link href="./manifest.json" rel="manifest" />
   <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
   <link href="./css/freelancer.min.css" rel="stylesheet" type="text/css" />
@@ -188,7 +188,7 @@
       </p>
 
       <!-- Social Icons -->
-      <div class="col-lg-4 mb-5 mt-5 mb-lg-0">
+      <div class="col-lg-4 mb-5 mt-5 mb-lg-0 ">
         <a class="btn btn-outline-light btn-social mx-1 LightGrey" style="border-radius:0%!important;"
           href="https://www.linkedin.com/in/ReggieJacksonShore" target="_blank" title="LinkedIn">
           <i class="fab fa-fw fa-linkedin-in"></i>
@@ -1291,7 +1291,7 @@
   <!-- Bootstrap Javascript. -->
   <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Plugin JavaScript -->
-  <script src="./vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="./vendor/jquery/jquery.easing.min.js"></script>
   <!-- Custom scripts for this template -->
   <script src="./js/freelancer.min.js"></script>
   <script>
@@ -1322,15 +1322,17 @@
 
       addBtn.addEventListener('click', (e) => {
         // hide our user interface that shows our A2HS button
-        addBtn.style.display = 'none';
+        // addBtn.style.display = 'none';
         // Show the prompt
         deferredPrompt.prompt();
         // Wait for the user to respond to the prompt
         deferredPrompt.userChoice.then((choiceResult) => {
           if (choiceResult.outcome === 'accepted') {
             // console.log('User accepted the A2HS prompt');
+            addBtn.innerHTML = '<a href="javascript:void(0);">You have installed this website.</a>';
           } else {
             // console.log('User dismissed the A2HS prompt');
+            addBtn.innerHTML = '<a href="javascript:void(0);">You have not installed this website.</a>';
           }
           deferredPrompt = null;
         });

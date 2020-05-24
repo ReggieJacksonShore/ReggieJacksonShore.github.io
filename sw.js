@@ -24,15 +24,6 @@ self.addEventListener('install', function(event) {
   );
 });
 
-
-
-
-
-
-
-
-
-
 // Fetching from the cache
 // Now that there are assets in the cache, the service worker can use those resources instead of requesting them from the network.
 
