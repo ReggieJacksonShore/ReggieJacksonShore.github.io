@@ -8,9 +8,9 @@ console.log('Service worker setup...');
 
 // importScripts('serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = 'reggiejacksonshore.github.io';
+var CACHE_NAME = 'cache-v4';
 var urlsToCache = [
-  './vendor/jquery/jquery.min.js'
+  './vendor/jquery/jquery-3.5.1.min.js'
 ];
 
 self.addEventListener('install', function(event) {
@@ -21,6 +21,20 @@ self.addEventListener('install', function(event) {
         console.log('Service worker opened cache');
         return cache.addAll(urlsToCache);
       })
+  );
+});
+
+self.addEventListener('activate', (event) => {
+  var cacheKeeplist = CACHE_NAME;
+
+  event.waitUntil(
+    caches.keys().then((keyList) => {
+      return Promise.all(keyList.map((key) => {
+        if (cacheKeeplist.indexOf(key) === -1) {
+          return caches.delete(key);
+        }
+      }));
+    })
   );
 });
 
