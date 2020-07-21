@@ -8,7 +8,7 @@ console.log('Service worker setup...');
 
 // importScripts('serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = 'cache-v4';
+var CACHE_NAME = 'cache-v5';
 var urlsToCache = [
   './vendor/jquery/jquery-3.5.1.min.js'
 ];
