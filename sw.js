@@ -8,9 +8,13 @@ console.log('Service worker setup...');
 
 // importScripts('serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = 'cache-v5';
+var CACHE_NAME = 'cache-v6';
 var urlsToCache = [
-  './vendor/jquery/jquery-3.5.1.min.js'
+  './img/Reggie.jpg',
+  './img/Rochester-Institute-of-Technology.png',
+  './vendor/jquery/jquery-3.5.1.min.js',
+  './vendor/swiper/swiper-bundle.min.css',
+  './vendor/swiper/swiper-bundle.min.js'
 ];
 
 self.addEventListener('install', function(event) {
