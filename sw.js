@@ -8,7 +8,7 @@ console.log('Service worker setup...');
 
 // importScripts('serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = 'cache-v6';
+var CACHE_NAME = 'cache-v7';
 var urlsToCache = [
   './img/Reggie.jpg',
   './img/Rochester-Institute-of-Technology.png',
