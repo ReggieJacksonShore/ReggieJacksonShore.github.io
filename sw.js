@@ -1,5 +1,5 @@
 // ServiceWorker
-console.log('Service worker setup...');
+console.log('Service worker initialized...');
 
 // Install event
 // 1. Open a cache.
@@ -8,7 +8,7 @@ console.log('Service worker setup...');
 
 // importScripts('serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = 'cache-v7';
+var CACHE_NAME = 'cache-v15';
 var urlsToCache = [
   './img/Reggie.jpg',
   './img/Rochester-Institute-of-Technology.png',
@@ -18,19 +18,23 @@ var urlsToCache = [
 ];
 
 self.addEventListener('install', function(event) {
+  
+  console.log('Service worker opened install event initialized...');
+
   // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
-        console.log('Service worker opened cache');
         return cache.addAll(urlsToCache);
       })
   );
 });
 
 self.addEventListener('activate', (event) => {
-  var cacheKeeplist = CACHE_NAME;
+  
+  console.log('Service worker activate event initialized...');
 
+  var cacheKeeplist = CACHE_NAME;
   event.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
@@ -46,6 +50,9 @@ self.addEventListener('activate', (event) => {
 // Now that there are assets in the cache, the service worker can use those resources instead of requesting them from the network.
 
 self.addEventListener('fetch', function(event) {
+  
+  console.log('Service worker fetch event initialized...');
+
   event.respondWith(
     caches.match(event.request)
     .then(function(response) {
