@@ -8,10 +8,12 @@ console.log('Service worker initialized...');
 
 // importScripts('serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = 'cache-v15';
+var CACHE_NAME = 'cache-v18';
 var urlsToCache = [
   './img/Reggie.jpg',
   './img/Rochester-Institute-of-Technology.png',
+  './vendor/fontawesome-free/css/all.min.css',
+  './css/freelancer.min.css',
   './vendor/jquery/jquery-3.5.1.min.js',
   './vendor/swiper/swiper-bundle.min.css',
   './vendor/swiper/swiper-bundle.min.js'
