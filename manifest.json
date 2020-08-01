@@ -1,6 +1,7 @@
 {
    "name": "Reggie Jackson Shore",
    "short_name": "Reggie",
+   "version": "1.0.0",
    "start_url": "./?utm_source=a2hs",
    "display": "standalone",
    "background_color": "#1abc9c",

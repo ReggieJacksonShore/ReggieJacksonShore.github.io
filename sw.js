@@ -14,7 +14,10 @@ var urlsToCache = [
   './img/Rochester-Institute-of-Technology.png',
   './vendor/fontawesome-free/css/all.min.css',
   './css/freelancer.min.css',
+  './js/freelancer.min.js', 
+  './vendor/bootstrap/js/bootstrap.bundle.min.js',
   './vendor/jquery/jquery-3.5.1.min.js',
+  './vendor/jquery/jquery.easing.min.js"',
   './vendor/swiper/swiper-bundle.min.css',
   './vendor/swiper/swiper-bundle.min.js'
 ];
@@ -72,13 +75,13 @@ function fetchAndCache(url) {
     }
     return caches.open(CACHE_NAME)
     .then(function(cache) {
-      console.log('idk');
+      console.log('fetchAndCache succeeded.');
       cache.put(url, response.clone());
       return response;
     });
   })
   .catch(function(error) {
-    console.log('Request failed: ', error);
     // You could return a custom offline 404 page here
+    console.log('fetchAndCache failed: ', error);
   });
 }
