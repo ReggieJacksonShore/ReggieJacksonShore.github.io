@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /
+User-Agent: Amazonbot
+User-Agent: Googlebot
+User-Agent: msnbot
+User-Agent: bingbot
+Allow: /
