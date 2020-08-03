@@ -1,13 +1,16 @@
 {
    "name": "Reggie Jackson Shore",
    "short_name": "Reggie",
-   "version": "1.0.0",
+   "categories": ["web", "web services", "internet services"],
+   "version": "2.0.0",
    "start_url": "./?utm_source=a2hs",
    "display": "standalone",
    "background_color": "#1abc9c",
-   "description": "Reggie Jackson Shore.",
+   "description": "Reggie Jackson Shore, Software Engineer.",
    "scope": "./",
    "theme_color": "#1abc9c",
+   "lang": "en-US",
+   "orientation": "portrait",
    "icons": [{
      "src": "./homescreen48.png",
      "sizes": "48x48",
@@ -31,7 +34,8 @@
    }, {
     "src": "./homescreen192.png",
     "sizes": "192x192",
-    "type": "image/png"
+    "type": "image/png",
+    "purpose": "any maskable"
   }, {
     "src": "./homescreen512.png",
     "sizes": "512x512",

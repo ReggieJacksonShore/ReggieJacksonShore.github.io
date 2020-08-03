@@ -1,7 +1,11 @@
-User-Agent: Amazonbot
-User-Agent: Googlebot
-User-Agent: msnbot
-User-Agent: bingbot
-Allow: /
+User-agent: Amazonbot
+Disallow:
+User-agent: Googlebot
+Disallow:
+User-agent: msnbot
+Disallow:
+User-agent: bingbot
+Disallow:
+
 User-agent: *
 Disallow: /
