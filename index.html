@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-<!-- ReggieJacksonShore.github.io, color: LightSlatGrey #A9A9A9 ... #A9A-9A9-->
+<!-- ReggieJacksonShore.github.io, color: LightSlatGrey #696969 ... #696-969-->
 <!-- www.ReggieJacksonShore.com, color: Green #1abc9c ... #1ab-c9c -->
 <!-- aws.ReggieJacksonShore.com (aws), color: Yellow #ff9900 ... #ff9-900 -->
 <!-- azure.ReggieJacksonShore.com (azure), color: Blue #4682B4 ... #468-2B4 -->
@@ -608,7 +608,7 @@
                 DevOps, Agile, Scrum and Lean principles
               </div>
             </div>
-            <img class="img-fluid" src="./img/JIRA-project-management.jpg" alt="JIRA-project-management" />
+            <img class="img-fluid" src="./img/Jira_project_management.jpg" alt="Jira_project_management" />
           </div>
         </div>
 
@@ -632,7 +632,7 @@
                 Cloud computing
               </div>
             </div>
-            <img class="img-fluid" src="./img/ReggieJacksonShore.github.io.jpg" alt="ReggieJacksonShore.github.io" />
+            <img class="img-fluid" src="./img/ReggieJacksonShore-github-io.jpg" alt="ReggieJacksonShore.github.io" />
           </div>
         </div>
       
@@ -662,48 +662,32 @@
           <p class="lead mb-4">Greater New York City Area</p>
   
           <p class="lead mb-0">
-            <a rel="noreferrer" href="https://darksky.net/poweredby/" target="_blank"><b>Geolocation API</b></a>
+            <a rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank"><b>Geolocation Web API</b></a>
           </p>
 
           <p class="lead mb-4">
-            <a rel="noreferrer" href="https://darksky.net/poweredby/" target="_blank"><span id="weather"></span></a>
+            <a rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" aria-label="Gelocation" target="_blank"><span id="Geolocation"></span></a>
           </p>
 
-          
           <script>
 
-          var x = document.getElementById("weather");
-          function getLocation() {
-            if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-              x.innerHTML = "Geolocation not supported by this browser.";
+            var x = document.getElementById("Geolocation");
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else {
+                x.innerHTML = "Geolocation not supported by this browser.";
+              }
             }
-          }
 
-          function showPosition(position) {
-            console.log(position);
-            x.innerHTML = position.coords.latitude +
-            ", " + position.coords.longitude +
-            " (" + position.coords.accuracy + " meters)";
-          }
+            function showPosition(position) {
+              console.log(position);
+              x.innerHTML = position.coords.latitude +
+              ", " + position.coords.longitude +
+              " (" + position.coords.accuracy + " meters)";
+            }
 
-          getLocation();
-
-          "use strict";
-
-          let map;
-
-          function initMap() {
-            map = new google.maps.Map(document.getElementById("map"), {
-              center: {
-                lat: -34.397,
-                lng: 150.644
-              },
-              zoom: 8
-            });
-          }
-
+            getLocation();
 
           </script>
 
@@ -1375,8 +1359,7 @@
                 </div>
                 <!-- Portfolio - Text -->
                 <p class="mt-5 mb-5">
-                  Developed health education website to better educate patients on chronic conditions and health related
-                  products.
+                  Developed health education website to better educate patients on chronic conditions and health related products.
                 </p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i> Close Window</button>
               </div>
@@ -1418,7 +1401,7 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="./img/JIRA-project-management.jpg" alt="First slide" />
+                      <img class="d-block w-100" src="./img/Jira_project_management.jpg" alt="First slide" />
                     </div>
                     <div class="carousel-item">
                       <img class="d-block w-100" src="./img/GitHub.jpg" alt="Second slide" />
@@ -1446,76 +1429,6 @@
                 <!-- Portfolio - Text -->
                 <p class="mt-5 mb-5">
                   Integral member of software development team practicing DevOps, Agile, Scum, and Lean principles to efficiently deliver value to our researchers and the research community.
-                </p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i> Close Window</button>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Portfolio 12 -->
-  <div class="portfolio-modal modal fade" id="portfolioItem12" tabindex="-1" role="dialog"
-    aria-labelledby="portfolioItem12Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-
-                <!-- Portfolio Title -->
-                <h2 class="portfolio-modal-title text-secondary text-camelcase mb-0">Cloud computing</h2>
-                
-                <!-- Icon Divider -->
-                <div class="divider-custom"></div>
-                
-                <div id="carouselExampleIndicators12" class="carousel slide" data-ride="carousel">
-                  <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators12" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators12" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators12" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleIndicators12" data-slide-to="3"></li>
-                    <li data-target="#carouselExampleIndicators12" data-slide-to="4"></li>
-                  </ol>
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img class="d-block w-100" src="./img/ReggieJacksonShore.github.io.jpg" alt="First slide" />
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="./img/www.ReggieJacksonShore.com.jpg" alt="Second slide" />
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="./img/aws.ReggieJacksonShore.com.jpg" alt="Third slide" />
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="./img/azure.ReggieJacksonShore.com.jpg" alt="Fourth slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="./img/gcp.ReggieJacksonShore.com.jpg" alt="Fifth slide" />
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators12" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators12" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-
-                <!-- Portfolio - Text -->
-                <p class="mt-5 mb-5">
-                  Developed prototypes and solutions (e.g. Stand-up Generator, Web Push Notifications, and Automatic Billing Program) that make use of modern web languages, frameworks, and technologies.
                 </p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i> Close Window</button>
 
@@ -1570,7 +1483,7 @@
                       <img class="d-block w-100" src="./img/Postman.jpg" alt="Fourth slide">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="./img/JIRA-project-management.jpg" alt="Fifth slide" />
+                      <img class="d-block w-100" src="./img/Jira_project_management.jpg" alt="Fifth slide" />
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleIndicators11" role="button" data-slide="prev">
@@ -1578,6 +1491,76 @@
                     <span class="sr-only">Previous</span>
                   </a>
                   <a class="carousel-control-next" href="#carouselExampleIndicators11" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+
+                <!-- Portfolio - Text -->
+                <p class="mt-5 mb-5">
+                  Developed prototypes and solutions (e.g. Stand-up Generator, Web Push Notifications, and Automatic Billing Program) that make use of modern web languages, frameworks, and technologies.
+                </p>
+                <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i> Close Window</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Portfolio 12 -->
+  <div class="portfolio-modal modal fade" id="portfolioItem12" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioItem12Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+
+                <!-- Portfolio Title -->
+                <h2 class="portfolio-modal-title text-secondary text-camelcase mb-0">Cloud computing</h2>
+                
+                <!-- Icon Divider -->
+                <div class="divider-custom"></div>
+                
+                <div id="carouselExampleIndicators12" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators12" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators12" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators12" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators12" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators12" data-slide-to="4"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="./img/ReggieJacksonShore-github-io.jpg" alt="First slide" />
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="./img/www-ReggieJacksonShore-com.jpg" alt="Second slide" />
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="./img/aws-ReggieJacksonShore-com.jpg" alt="Third slide" />
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="./img/azure-ReggieJacksonShore-com.jpg" alt="Fourth slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="./img/gcp-ReggieJacksonShore-com.jpg" alt="Fifth slide" />
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators12" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators12" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
