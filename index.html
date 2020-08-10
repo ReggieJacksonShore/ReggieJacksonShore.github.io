@@ -143,6 +143,11 @@
 <!-- <script src="./vendor/swiper/swiper-bundle.js"></script> -->
 <script src="./vendor/swiper/swiper-bundle.min.js"></script>
 
+<!-- Load React. -->
+<!-- Note: when deploying, replace "development.js" with "production.min.js". -->  
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
 <style>
 
   body { background-color:#1abc9c !important; }    
@@ -170,6 +175,19 @@
   .swiper-container { background-color:transparent; width:90%; padding-top:12px; padding-bottom:48px; }
   .swiper-slide { background-position:center; background-size:cover; background-color:transparent!important; padding:0!important; width: auto; }
 
+  img { /* background:linear-gradient(to bottom, LightGrey, DarkGrey); */ }
+
+  div[id^="Bar"] {
+			padding:0px 0px;
+			width: 0%;
+			height:2px;
+      font-size:8px;
+      font-weight:normal;
+			background-color:#87cefa;
+			text-align:right; }
+
+  *:focus { outline:0!important;border:0!important;}
+
 </style>
 </head>
 <body id="page-top">
@@ -182,9 +200,13 @@
         <table>
           <tr>
             <td style="vertical-align:middle!important;">
-              <img class="masthead-avatar" src="./img/Reggie.jpg" alt="Reggie" style="border:0px solid White;float:left;margin-right:12px;height:42px;width:42px;box-shadow:0 0 0px Black; border-radius:0!important" />
+              <img id="GitHubAvatar" class="masthead-avatar" src="./img/Reggie.jpg" alt="Reggie" style="border:0px solid White;float:left;margin-right:12px;height:42px;width:42px;box-shadow:0 0 0px Black; border-radius:0!important" />
             </td>
-            <td style="vertical-align:middle!important;">Reggie</td>
+            <td style="vertical-align:middle!important;">
+              <form name="" id="GitHubUser" method="GET" action="" onSubmit="javascript:void(0);">
+              <input name="GitHubUser" type="text" value="Reggie" 
+                style="padding:0;width:200px;background-color:#2c3e50!important;color:White;font-weight:bold;outline:0;border:0;" 
+                onChange="UpdateGitHubUser(this.value);" /></form><div id="Bar">GitHub 0%</div></td>
           </tr>
         </table>
       </a>
@@ -225,7 +247,7 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="./img/Reggie.jpg" alt="Reggie" width="220px" height="220px" style="outline:0px solid #1abc9c;box-shadow:0 0 6px rgba(0, 0, 0, .75);border-radius:0!important;" />
+              <img id="GitHubAvatar2" src="./img/Reggie.jpg" alt="Reggie" width="220px" height="220px" style="outline:0px solid #1abc9c;box-shadow:0 0 6px rgba(0, 0, 0, .75);border-radius:0!important;" />
             </div>
             <div class="swiper-slide">
               <a rel="noreferrer" class="btn btn-outline-light btn-social mx-1 LightGrey" style="width:220px;height:220px;border-radius:0%!important;" href="https://facebook.com/ReggieJacksonShore" target="_blank" title="facebook"><i class="fab fa-fw fa-4x fa-facebook-f"></i></a>
@@ -304,10 +326,10 @@
         </script>
 
       <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-camelcase mb-0">Software Engineer</h1>
+      <h1 id="GitHubTitle" class="masthead-heading text-camelcase mb-0">Software Engineer</h1>
 
       <!-- Masthead Subheading -->
-      <p class="masthead-subheading font-weight-light mt-4 mb-0">
+      <p id="GitHubDescription" class="masthead-subheading font-weight-light mt-4 mb-0">
         Hello, my name is Reggie and I'm a Software Engineer who enjoys developing for the web, learning about web technologies and pushing the limits of user experience in the browser.
       </p>
 
@@ -484,6 +506,10 @@
 
       <!-- Portfolio Section Heading -->
       <h2 class="page-section-heading text-center text-camelcase text-secondary mb-5">Portfolio</h2>
+
+      <p class="lead text-center mb-5">
+        I have held significant roles for a national health care supplies company and the largest healthcare network provider in the state of New York as a full stack web developer and software engineer respectively. I have demonstrated solid design principles, architectural principles and am adept at conveying complex concepts in a simple and compelling manner through the web browser.
+      </p>
 
       <!-- Portfolio Grid Items -->
       <div class="row">
@@ -666,7 +692,7 @@
           </p>
 
           <p class="lead mb-4">
-            <a rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" aria-label="Gelocation" target="_blank"><span id="Geolocation"></span></a>
+            <a rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" aria-label="Gelocation" target="_blank"><span id="Geolocation">Loading...</span></a>
           </p>
 
           <script>
@@ -1591,6 +1617,8 @@
 
     console.log('Service worker initializing...');
 
+
+
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js')
         .then(function (registration) {
@@ -1632,6 +1660,145 @@
         });
       });
     });
+
+  </script>
+
+  <script>
+
+
+    $( document ).ready(function() {
+        console.log( "Document ready!" );
+    });
+
+function UpdateGitHubUser(username) {
+      
+      // Collect form into object.
+                
+      var kvpairs = [];
+      var e = '';
+      
+      form = document.getElementById('GitHubUser');
+      
+      for ( var i = 0; i < form.elements.length; i++ ) {
+        e = form.elements[i];
+        kvpairs.push(encodeURIComponent(e.name) + '=' + encodeURIComponent(e.value));
+      }
+      
+      var e = kvpairs.join('&');		
+      
+      var xhr = '';
+          // GitHub endpoint, dynamically passing in specified username
+      var url = 'https://api.github.com/users/' + username;
+
+      if ( typeof XMLHttpRequest !== 'undefined' ) { 
+        
+        xhr = new XMLHttpRequest();
+      
+      } else {
+        
+        var versions = ["MSXML2.XmlHttp.5.0","MSXML2.XmlHttp.4.0","MSXML2.XmlHttp.3.0","MSXML2.XmlHttp.2.0","Microsoft.XmlHttp"];
+
+        for (var i = 0, len = versions.length; i < len; i++) { try { xhr = new ActiveXObject(versions[i]); break; } catch(e) {} } // end for
+      }
+  
+      // xhr.onloadstart = function(e) { console.log('xhr.onloadstart'); };
+      // xhr.onloadend = function(e) { console.log('xhr.onloadend'); }
+            
+      xhr.onreadystatechange = function() {
+      
+        // 0: request not initialized 
+        // 1: server connection established
+        // 2: request received 
+        // 3: processing request 
+        // 4: request finished and response is ready
+        // 5: reset request
+
+        if(xhr.readyState == 0) {
+        
+          // console.log('0: request not initialized');
+          
+          document.getElementById('Bar').style.width = '10%'; 
+          document.getElementById('Bar').innerHTML = '10%';
+          
+        }
+
+        else if(xhr.readyState == 1) {
+          
+          // console.log('1: server connection established');
+        
+          document.getElementById('Bar').style.width = '25%'; 
+          document.getElementById('Bar').innerHTML = '25%';
+        
+        }
+                
+        else if(xhr.readyState == 2) {
+          
+          // console.log('2: request received');
+          
+          document.getElementById('Bar').style.width = '50%'; 
+          document.getElementById('Bar').innerHTML = '50%';
+          
+        }
+        
+        else if(xhr.readyState == 3) {
+          
+          // console.log('3: processing request');
+        
+          document.getElementById('Bar').style.width = '75%'; 
+          document.getElementById('Bar').innerHTML = '75%';
+          
+        }
+        
+        else if(xhr.readyState == 4 && xhr.status == 200) {
+          
+          // console.log('4: request finished and response is ready');
+          console.log(this.responseText);
+          
+          document.getElementById('Bar').style.width = '100%'; 
+          document.getElementById('Bar').innerHTML = '100%';
+            
+          // document.getElementById('SaveFile).style.display = 'block';
+            
+          var grabJSONData = this.responseText;
+          var arr = JSON.parse(grabJSONData);
+          
+          console.log(arr);
+          console.log(arr.avatar_url);
+          document.getElementById('GitHubAvatar').src = arr.avatar_url;
+          document.getElementById('GitHubAvatar').alt = arr.name;
+          document.getElementById('GitHubAvatar2').src = arr.avatar_url;
+          document.getElementById('GitHubAvatar2').alt = arr.name;
+          document.getElementById('GitHubTitle').innerHTML = arr.name;
+          document.getElementById('GitHubDescription').innerHTML = arr.bio
+          
+          // We updated the DB, now we need to update the table holding records on the Client side. 
+          
+
+
+          setTimeout(function() {
+          
+            document.getElementById('Bar').style.width = '0%';
+            document.getElementById('Bar').innerHTML = 'GitHub 0%';
+            // document.getElementById('Message').innerHTML = 'Waiting...';
+            // document.getElementById('Button').style.display = 'block';
+            // document.getElementById('SaveFile).style.display = 'none';
+            
+            // $('.Error').remove(); 
+                          
+          }, 4*1000);
+        
+        }
+        
+      };
+      
+      console.log(e);
+      console.log(url);
+      xhr.open('Get', url, true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhr.send(e);
+      
+      
+}
 
   </script>
 
