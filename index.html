@@ -206,8 +206,8 @@
             <td style="vertical-align:middle!important;">
               <form name="" id="GitHubUser" method="GET">
               <input id="GitHubUserText" name="GitHubUser" type="text" value="ReggieJacksonShore" 
-                style="padding:0;width:200px;background-color:#2c3e50!important;color:White;font-weight:bold;outline:0;border:0;" 
-                data-regex-pattern="^([a-zA-Z-]{1,40})$"
+                style="padding:0;width:260px;background-color:#2c3e50!important;color:White!important;font-weight:bold;outline:0;border:0;" 
+                data-regex-pattern="^([a-zA-Z0-9-]{1,40})$"
                 onKeyUp="ValidatePattern(this.value,this.dataset.regexPattern);" onChange="UpdateGitHubUser(this.value);"  /></form><div id="Bar">GitHub 0%</div></td>
           </tr>
         </table>
@@ -1671,6 +1671,7 @@
 
       $( document ).ready(function() {
           console.log( "Document ready!" );
+
       });
       
     // Enter key
@@ -1691,19 +1692,16 @@
             if (regex.test(value) === true) {
 
               //document.getElementById('RegMatching').innerHTML = "Matches";
-              document.getElementById('GitHubUserText').style.border = "2px solid LightGreen!important;";
+              document.getElementById('GitHubUserText').style.color = "White";
 
             } else {
 
               //document.getElementById('RegMatching').innerHTML = "Non matching";
-              document.getElementById('GitHubUserText').style.border = "2px solid Coral!important;";
+              document.getElementById('GitHubUserText').style.color = "Coral";
 
             }
 
           } catch (err) {
-            console.log(err);
-            // document.getElementById('RegMatching').innerHTML = err;
-            document.getElementById('GitHubUserText').style.border = "2px solid Orange!important;";
 
           }
 
@@ -1802,14 +1800,15 @@
               
             var grabJSONData = this.responseText;
             var arr = JSON.parse(grabJSONData);
-            
+
             console.log(arr);
             console.log(arr.avatar_url);
             document.getElementById('GitHubAvatar').src = arr.avatar_url;
             document.getElementById('GitHubAvatar').alt = arr.name;
             document.getElementById('GitHubAvatar2').src = arr.avatar_url;
             document.getElementById('GitHubAvatar2').alt = arr.name;
-            document.getElementById('GitHubTitle').innerHTML = (arr.name !== 'Reggie Jackson Shore') ? arr.name : 'Software Engineer';
+            document.getElementById('GitHubTitle').innerHTML = (arr.name !== null) ? arr.name : 'No title for this github user!';
+            document.getElementById('GitHubTitle').innerHTML = (arr.name == 'Reggie Jackson Shore') ? 'Software Engineer' : document.getElementById('GitHubTitle').innerHTML ;
             GitHubDescription = document.getElementById('GitHubDescription');
             GitHubDescription.innerHTML = (arr.bio !== null) ? arr.bio : 'No bio for this github user!';
             GitHubDescription.innerHTML += '<br /> <span style="font-style:italic;font-size:12px!important;">Public repos: ' + arr.public_repos + ', Date created: ' + arr.created_at + ', Date updated: ' + arr.updated_at + '</span>';
