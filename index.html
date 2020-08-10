@@ -68,7 +68,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no" />
 <meta name="referrer" content="origin" />
 <meta name="robots" content="INDEX,FOLLOW" />
-<meta name="copyright" content=">&copy; Reggie. All rights reserved." />
+<meta name="copyright" content=">&copy; Reggie Jackson Shore. All rights reserved." />
 <meta name="author" content="Reggie Jackson Shore" />
 <meta name="publisher" content="Reggie Jackson Shore" />
 <meta name="keywords" content="Reggie Jackson Shore" />
@@ -181,8 +181,9 @@
 			padding:0px 0px;
 			width: 0%;
 			height:2px;
-      font-size:8px;
+      font-size:10px;
       font-weight:normal;
+      font-style:italic;
 			background-color:#87cefa;
 			text-align:right; }
 
@@ -200,13 +201,14 @@
         <table>
           <tr>
             <td style="vertical-align:middle!important;">
-              <img id="GitHubAvatar" class="masthead-avatar" src="./img/Reggie.jpg" alt="Reggie" style="border:0px solid White;float:left;margin-right:12px;height:42px;width:42px;box-shadow:0 0 0px Black; border-radius:0!important" />
+              <img id="GitHubAvatar" class="masthead-avatar" src="./img/Reggie.jpg" alt="Reggie" style="border:0px solid White;float:left;margin-right:12px;height:42px;width:42px;box-shadow:0 0 6px rgba(0, 0, 0, .75); border-radius:0!important" />
             </td>
             <td style="vertical-align:middle!important;">
-              <form name="" id="GitHubUser" method="GET" action="" onSubmit="javascript:void(0);">
-              <input name="GitHubUser" type="text" value="Reggie" 
+              <form name="" id="GitHubUser" method="GET">
+              <input id="GitHubUserText" name="GitHubUser" type="text" value="ReggieJacksonShore" 
                 style="padding:0;width:200px;background-color:#2c3e50!important;color:White;font-weight:bold;outline:0;border:0;" 
-                onChange="UpdateGitHubUser(this.value);" /></form><div id="Bar">GitHub 0%</div></td>
+                data-regex-pattern="^([a-zA-Z-]{1,40})$"
+                onKeyUp="ValidatePattern(this.value,this.dataset.regexPattern);" onChange="UpdateGitHubUser(this.value);"  /></form><div id="Bar">GitHub 0%</div></td>
           </tr>
         </table>
       </a>
@@ -804,7 +806,7 @@
   <!-- Copyright Section -->
   <section class="copyright py-4 text-center text-white">
     <div class="container">
-      <small>&copy; Reggie. All rights reserved.</small>
+      <small>&copy; Reggie Jackson Shore. All rights reserved.</small>
     </div>
   </section>
 
@@ -1665,140 +1667,188 @@
 
   <script>
 
+    // Document ready
 
-    $( document ).ready(function() {
-        console.log( "Document ready!" );
-    });
+      $( document ).ready(function() {
+          console.log( "Document ready!" );
+      });
+      
+    // Enter key
+      
+      $("form").keypress(function(e) { if (e.which == 13) { return false; } });
 
-function UpdateGitHubUser(username) {
-      
-      // Collect form into object.
-                
-      var kvpairs = [];
-      var e = '';
-      
-      form = document.getElementById('GitHubUser');
-      
-      for ( var i = 0; i < form.elements.length; i++ ) {
-        e = form.elements[i];
-        kvpairs.push(encodeURIComponent(e.name) + '=' + encodeURIComponent(e.value));
+      // Validate Pattern 
+
+        function ValidatePattern(value,regex) {
+
+          var errors = 0;
+          console.log(regex);
+          regex = RegExp(regex);
+          console.log(regex);
+
+          try {
+
+            if (regex.test(value) === true) {
+
+              //document.getElementById('RegMatching').innerHTML = "Matches";
+              document.getElementById('GitHubUserText').style.border = "2px solid LightGreen!important;";
+
+            } else {
+
+              //document.getElementById('RegMatching').innerHTML = "Non matching";
+              document.getElementById('GitHubUserText').style.border = "2px solid Coral!important;";
+
+            }
+
+          } catch (err) {
+            console.log(err);
+            // document.getElementById('RegMatching').innerHTML = err;
+            document.getElementById('GitHubUserText').style.border = "2px solid Orange!important;";
+
+          }
+
+        }
+
+    // 
+
+      function UpdateGitHubUser(username) {
+        
+        // Collect form into object.
+                  
+        var kvpairs = [];
+        var e = '';
+        
+        form = document.getElementById('GitHubUser');
+        
+        for ( var i = 0; i < form.elements.length; i++ ) {
+          e = form.elements[i];
+          kvpairs.push(encodeURIComponent(e.name) + '=' + encodeURIComponent(e.value));
+        }
+        
+        var e = kvpairs.join('&');		
+        
+        var xhr = '';
+            // GitHub endpoint, dynamically passing in specified username
+        var url = 'https://api.github.com/users/' + username;
+
+        if ( typeof XMLHttpRequest !== 'undefined' ) { 
+          
+          xhr = new XMLHttpRequest();
+        
+        } else {
+          
+          var versions = ["MSXML2.XmlHttp.5.0","MSXML2.XmlHttp.4.0","MSXML2.XmlHttp.3.0","MSXML2.XmlHttp.2.0","Microsoft.XmlHttp"];
+
+          for (var i = 0, len = versions.length; i < len; i++) { try { xhr = new ActiveXObject(versions[i]); break; } catch(e) {} } // end for
+        }
+    
+        // xhr.onloadstart = function(e) { console.log('xhr.onloadstart'); };
+        // xhr.onloadend = function(e) { console.log('xhr.onloadend'); }
+              
+        xhr.onreadystatechange = function() {
+        
+          // 0: request not initialized 
+          // 1: server connection established
+          // 2: request received 
+          // 3: processing request 
+          // 4: request finished and response is ready
+          // 5: reset request
+
+          if(xhr.readyState == 0) {
+          
+            // console.log('0: request not initialized');
+            
+            document.getElementById('Bar').style.width = '10%'; 
+            document.getElementById('Bar').innerHTML = '10%';
+            
+          }
+
+          else if(xhr.readyState == 1) {
+            
+            // console.log('1: server connection established');
+          
+            document.getElementById('Bar').style.width = '25%'; 
+            document.getElementById('Bar').innerHTML = '25%';
+          
+          }
+                  
+          else if(xhr.readyState == 2) {
+            
+            // console.log('2: request received');
+            
+            document.getElementById('Bar').style.width = '50%'; 
+            document.getElementById('Bar').innerHTML = '50%';
+            
+          }
+          
+          else if(xhr.readyState == 3) {
+            
+            // console.log('3: processing request');
+          
+            document.getElementById('Bar').style.width = '75%'; 
+            document.getElementById('Bar').innerHTML = '75%';
+            
+          }
+          
+          else if(xhr.readyState == 4 && xhr.status == 200) {
+            
+            // console.log('4: request finished and response is ready');
+            console.log(this.responseText);
+            
+            document.getElementById('Bar').style.width = '100%'; 
+            document.getElementById('Bar').innerHTML = '100%';
+              
+            // document.getElementById('SaveFile).style.display = 'block';
+              
+            var grabJSONData = this.responseText;
+            var arr = JSON.parse(grabJSONData);
+            
+            console.log(arr);
+            console.log(arr.avatar_url);
+            document.getElementById('GitHubAvatar').src = arr.avatar_url;
+            document.getElementById('GitHubAvatar').alt = arr.name;
+            document.getElementById('GitHubAvatar2').src = arr.avatar_url;
+            document.getElementById('GitHubAvatar2').alt = arr.name;
+            document.getElementById('GitHubTitle').innerHTML = (arr.name !== 'Reggie Jackson Shore') ? arr.name : 'Software Engineer';
+            GitHubDescription = document.getElementById('GitHubDescription');
+            GitHubDescription.innerHTML = (arr.bio !== null) ? arr.bio : 'No bio for this github user!';
+            GitHubDescription.innerHTML += '<br /> <span style="font-style:italic;font-size:12px!important;">Public repos: ' + arr.public_repos + ', Date created: ' + arr.created_at + ', Date updated: ' + arr.updated_at + '</span>';
+            
+            // We updated the DB, now we need to update the table holding records on the Client side. 
+            
+
+
+            setTimeout(function() {
+            
+              document.getElementById('Bar').style.width = '0%';
+              document.getElementById('Bar').innerHTML = 'GitHub 0%';
+              // document.getElementById('Message').innerHTML = 'Waiting...';
+              // document.getElementById('Button').style.display = 'block';
+              // document.getElementById('SaveFile).style.display = 'none';
+              //
+              // $('.Error').remove(); 
+                            
+            }, 4*1000);
+          
+          } else {
+              document.getElementById('GitHubUserText').value = '404 (Not Found)';
+              document.getElementById('Bar').style.width = '0%';
+              document.getElementById('Bar').innerHTML = 'GitHub 0%';
+          }
+          
+        };
+        
+        console.log(e);
+        console.log(url);
+        xhr.open('Get', url, true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send(e);
+        
+        
       }
-      
-      var e = kvpairs.join('&');		
-      
-      var xhr = '';
-          // GitHub endpoint, dynamically passing in specified username
-      var url = 'https://api.github.com/users/' + username;
-
-      if ( typeof XMLHttpRequest !== 'undefined' ) { 
-        
-        xhr = new XMLHttpRequest();
-      
-      } else {
-        
-        var versions = ["MSXML2.XmlHttp.5.0","MSXML2.XmlHttp.4.0","MSXML2.XmlHttp.3.0","MSXML2.XmlHttp.2.0","Microsoft.XmlHttp"];
-
-        for (var i = 0, len = versions.length; i < len; i++) { try { xhr = new ActiveXObject(versions[i]); break; } catch(e) {} } // end for
-      }
-  
-      // xhr.onloadstart = function(e) { console.log('xhr.onloadstart'); };
-      // xhr.onloadend = function(e) { console.log('xhr.onloadend'); }
-            
-      xhr.onreadystatechange = function() {
-      
-        // 0: request not initialized 
-        // 1: server connection established
-        // 2: request received 
-        // 3: processing request 
-        // 4: request finished and response is ready
-        // 5: reset request
-
-        if(xhr.readyState == 0) {
-        
-          // console.log('0: request not initialized');
-          
-          document.getElementById('Bar').style.width = '10%'; 
-          document.getElementById('Bar').innerHTML = '10%';
-          
-        }
-
-        else if(xhr.readyState == 1) {
-          
-          // console.log('1: server connection established');
-        
-          document.getElementById('Bar').style.width = '25%'; 
-          document.getElementById('Bar').innerHTML = '25%';
-        
-        }
-                
-        else if(xhr.readyState == 2) {
-          
-          // console.log('2: request received');
-          
-          document.getElementById('Bar').style.width = '50%'; 
-          document.getElementById('Bar').innerHTML = '50%';
-          
-        }
-        
-        else if(xhr.readyState == 3) {
-          
-          // console.log('3: processing request');
-        
-          document.getElementById('Bar').style.width = '75%'; 
-          document.getElementById('Bar').innerHTML = '75%';
-          
-        }
-        
-        else if(xhr.readyState == 4 && xhr.status == 200) {
-          
-          // console.log('4: request finished and response is ready');
-          console.log(this.responseText);
-          
-          document.getElementById('Bar').style.width = '100%'; 
-          document.getElementById('Bar').innerHTML = '100%';
-            
-          // document.getElementById('SaveFile).style.display = 'block';
-            
-          var grabJSONData = this.responseText;
-          var arr = JSON.parse(grabJSONData);
-          
-          console.log(arr);
-          console.log(arr.avatar_url);
-          document.getElementById('GitHubAvatar').src = arr.avatar_url;
-          document.getElementById('GitHubAvatar').alt = arr.name;
-          document.getElementById('GitHubAvatar2').src = arr.avatar_url;
-          document.getElementById('GitHubAvatar2').alt = arr.name;
-          document.getElementById('GitHubTitle').innerHTML = arr.name;
-          document.getElementById('GitHubDescription').innerHTML = arr.bio
-          
-          // We updated the DB, now we need to update the table holding records on the Client side. 
-          
 
 
-          setTimeout(function() {
-          
-            document.getElementById('Bar').style.width = '0%';
-            document.getElementById('Bar').innerHTML = 'GitHub 0%';
-            // document.getElementById('Message').innerHTML = 'Waiting...';
-            // document.getElementById('Button').style.display = 'block';
-            // document.getElementById('SaveFile).style.display = 'none';
-            //
-            // $('.Error').remove(); 
-                          
-          }, 4*1000);
-        
-        }
-        
-      };
-      
-      console.log(e);
-      console.log(url);
-      xhr.open('Get', url, true);
-      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-      xhr.send(e);
-      
-      
-}
+
 
   </script>
 
