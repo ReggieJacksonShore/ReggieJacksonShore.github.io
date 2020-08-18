@@ -3,7 +3,7 @@
 <head>
 
 <!-- ReggieJacksonShore.github.io, color: Grey #808080 ... #808-080-->
-<!-- www.ReggieJacksonShore.com, color: Green #1abc9c ... #1ab-c9c -->
+<!-- www.ReggieJacksonShore.com, color: Green #1abc9 ... #1ab-c9c -->
 <!-- aws.ReggieJacksonShore.com (aws), color: Yellow #ff9900 ... #ff9-900 -->
 <!-- azure.ReggieJacksonShore.com (azure), color: Blue #4682B4 ... #468-2B4 -->
 <!-- gcp.ReggieJacksonShore.com (gcp), color: Red #FF6347 ... #FF6-347 -->
@@ -21,7 +21,7 @@
 
 <!-- www.ReggieJacksonShore.com -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169839104-5"></script>
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169839104-5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -692,36 +692,6 @@
 
           <h3 class="text-camelcase mt-5 mb-4">Location</h3>
           <p class="lead mb-4">Greater New York City Area</p>
-  
-          <p class="lead mb-0">
-            <a rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank"><b>Geolocation Web API</b></a>
-          </p>
-
-          <p class="lead mb-4">
-            <a rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" aria-label="Gelocation" target="_blank"><span id="Geolocation">Loading...</span></a>
-          </p>
-
-          <script>
-
-            var x = document.getElementById("Geolocation");
-            function getLocation() {
-              if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-              } else {
-                x.innerHTML = "Geolocation not supported by this browser.";
-              }
-            }
-
-            function showPosition(position) {
-              console.log(position);
-              x.innerHTML = position.coords.latitude +
-              ", " + position.coords.longitude +
-              " (" + position.coords.accuracy + " meters)";
-            }
-
-            getLocation();
-
-          </script>
 
         </div>
 
