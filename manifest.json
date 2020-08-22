@@ -5,10 +5,10 @@
    "version": "2.0.0",
    "start_url": "./?utm_source=a2hs",
    "display": "standalone",
-   "background_color": "#FF6347",
+   "background_color": "#808080",
    "description": "Reggie Jackson Shore, Software Engineer.",
    "scope": "./",
-   "theme_color": "#FF6347",
+   "theme_color": "#808080",
    "lang": "en-US",
    "orientation": "portrait",
    "icons": [{

@@ -8,7 +8,8 @@ console.log('Service worker initialized...');
 
 // importScripts('serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = 'cache-v19';
+var CACHE_NAME = 'version-1.0.0';
+try { document.getElementById('cache').innerHTML = CACHE_NAME; } catch(err) { }
 var urlsToCache = [
   './img/Reggie.jpg',
   './img/Rochester-Institute-of-Technology.png',
