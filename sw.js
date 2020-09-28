@@ -8,7 +8,7 @@ console.log('Service worker initialized...');
 
 // importScripts('serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = 'version-1.0.0';
+var CACHE_NAME = '1.0.0';
 try { document.getElementById('cache').innerHTML = CACHE_NAME; } catch(err) { }
 var urlsToCache = [
   './img/Reggie.jpg',
@@ -18,7 +18,7 @@ var urlsToCache = [
   './js/freelancer.min.js', 
   './vendor/bootstrap/js/bootstrap.bundle.min.js',
   './vendor/jquery/jquery-3.5.1.min.js',
-  './vendor/jquery/jquery.easing.min.js"',
+  './vendor/jquery/jquery.easing.min.js',
   './vendor/swiper/swiper-bundle.min.css',
   './vendor/swiper/swiper-bundle.min.js'
 ];
