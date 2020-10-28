@@ -8,28 +8,33 @@ console.log('Service worker initialized...');
 
 // importScripts('serviceworker-cache-polyfill.js');
 
-var CACHE_NAME = '1.0.0';
-try { document.getElementById('cache').innerHTML = CACHE_NAME; } catch(err) { }
-var urlsToCache = [
-  './img/Reggie.jpg',
-  './img/Rochester-Institute-of-Technology.png',
-  './vendor/fontawesome-free/css/all.min.css',
-  './css/freelancer.min.css',
-  './js/freelancer.min.js', 
-  './vendor/bootstrap/js/bootstrap.bundle.min.js',
-  './vendor/jquery/jquery-3.5.1.min.js',
-  './vendor/jquery/jquery.easing.min.js',
-  './vendor/swiper/swiper-bundle.min.css',
-  './vendor/swiper/swiper-bundle.min.js'
+// try { document.getElementById('cache').innerHTML = cacheName; } catch(err) { }
+
+const cacheName = '2.0.0';
+const urlsToCache = [
+  '/',
+  'index.html',
+  'img/Reggie.jpg',
+  'img/Rochester-Institute-of-Technology.png',
+  'vendor/fontawesome-free/css/all.min.css',
+  'css/freelancer.min.css',
+  'js/freelancer.min.js', 
+  'vendor/bootstrap/js/bootstrap.bundle.min.js',
+  'vendor/jquery/jquery-3.5.1.min.js',
+  'vendor/jquery/jquery.easing.min.js',
+  'vendor/swiper/swiper-bundle.min.css',
+  'vendor/swiper/swiper-bundle.min.js'
 ];
 
 self.addEventListener('install', function(event) {
+
   
   console.log('Service worker opened install event initialized...');
 
   // Perform install steps
+  // event.waitUntil - waits for the last promise in the series to complete before returning control to the event handler.
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches.open(cacheName)
       .then(function(cache) {
         return cache.addAll(urlsToCache);
       })
@@ -40,7 +45,7 @@ self.addEventListener('activate', (event) => {
   
   console.log('Service worker activate event initialized...');
 
-  var cacheKeeplist = CACHE_NAME;
+  var cacheKeeplist = cacheName;
   event.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
@@ -74,7 +79,7 @@ function fetchAndCache(url) {
     if (!response.ok) {
       throw Error(response.statusText);
     }
-    return caches.open(CACHE_NAME)
+    return caches.open(cacheName)
     .then(function(cache) {
       console.log('fetchAndCache succeeded.');
       cache.put(url, response.clone());
