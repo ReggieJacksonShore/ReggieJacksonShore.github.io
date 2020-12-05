@@ -145,6 +145,88 @@
 
 <style>
 
+  body { background-color: White; }    
+  nav { border-bottom: 0px solid #808080!important; }
+
+  #mainNav { font-weight:700 !important; box-shadow:0 0 8px rgba(0, 0, 0, .75); }
+  #mainNav .navbar-nav>li.nav-item>a.nav-link.active { background-color:transparent!important; color:#808080!important;border-radius:0!important; border-bottom:4px solid #808080!important; }
+  #mainNav .navbar-nav>li.nav-item>a.nav-link:hover { border-bottom:0px solid #808080; }
+  #mainNav .navbar-toggler { box-shadow:0 0 0 #808080 !important; background-color: #808080;}
+
+  footer {box-shadow:0 0 8px rgba(0, 0, 0, .75);}
+  .copyright {box-shadow:0 0 8px rgba(0, 0, 0, .75); background-color:#2c3e50!important;}
+  
+  #profile, #softwaredevelopment, #portfolio { background-color:White !important; }
+
+  b { font-weight:bold !important; }  
+
+  img { background:linear-gradient(to bottom, LightGrey, DarkGrey); background:White; }
+
+  div[id^="Bar"] {
+			padding:0px 0px;
+			width: 0%;
+			height:2px;
+      font-size:10px;
+      font-weight:normal;
+			background-color:#87cefa;
+			text-align:right; }
+  /* *:focus { outline:0!important;border:0!important;} */
+
+  .modal-content { border-radius:0 !important; }
+  
+  /* Button */
+  .btn { border-radius:0 !important; }
+  .btn-primary { 
+    border:0; color:#2c3e50!important; 
+    font-weight:bold; 
+    border-top: 1px solid LightGrey!important; 
+    background:linear-gradient(to bottom, DarkGrey, LightGrey); 
+    box-shadow:0 0 8px rgba(0, 0, 0, .50); }
+  .btn-primary:hover { background:linear-gradient(to bottom, LightGrey, DarkGrey); }
+
+  .masthead { padding-top:calc(6rem + 44px) !important; }
+  .portfolio-item { border-radius:0 !important; }
+  .portfolio-item:hover { box-shadow:0 0 0 #808080 !important; }
+  .navbar-toggler { outline:0!important; border-radius:0!important; }
+  .close:focus { outline:0!important; }
+  a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover { background-color: #808080!important; }
+  
+  /* Links */
+  a.LightGrey { padding:12px 12px!important; border:0px solid DarkGrey!important; border-top:1px solid LightGrey!important; color:#2c3e50!important; background:linear-gradient(to bottom, DarkGrey, LightGrey); box-shadow:0 0 8px rgba(0, 0, 0, .50); }
+  a.LightGrey:hover { padding:12px 12px!important; background:linear-gradient(to bottom, LightGrey, DarkGrey); }
+  a:active { border:0px solid DarkGrey!important; }
+
+  a.downloadNow { text-decoration: underline!important;  }
+  a.downloadNow:hover { text-decoration: none!important;  }
+  
+  /* Swiper */
+  .swiper-container { background-color:transparent; width:90%; padding-top:12px; padding-bottom:48px; }
+  .swiper-slide { background-position:center; background-size:cover; background-color:transparent!important; padding:0!important; width: auto; }
+
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) { 
+    body { background-color: White; }
+  }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) { 
+    body { background-color: White; } 
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) { 
+    body { background-color: White; }
+  }
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) { 
+    body { background-color: White; }
+  }
+
+  /* PWA (standalone) */
+  @media all and (display-mode: standalone) {
+    body { background-color: White; } 
+  }
 
 </style>
 </head>
@@ -1498,90 +1580,6 @@
 
   <script>
 
-    // Swiper: https://swiperjs.com/ The Most Modern Mobile Touch Slider
-     
-      var swiper = new Swiper('.swiper-container', {
-        grabCursor: true,
-        observer: true,
-        observeParents: true, 
-        observeSlideChildren: true,
-        slidesPerView: 'auto',
-        loop: true,
-        centeredSlides: true,
-        keyboard: {
-          enabled: true,
-          onlyInViewport: false,
-        },
-        effect: 'coverflow',
-        coverflowEffect: {
-          slideShadows: false,
-          rotate: 0,
-          stretch: 0,
-          depth: 150,
-          modifier: 2,
-        }, 
-        pagination: {
-          el: '.swiper-pagination',
-        },
-      });
-
-    console.log('Service worker initializing...');
-    
-    // If ServiceWorker is available...
-
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js')
-          .then(function (registration) {
-            console.log('Service worker registration successful with scope: ', registration.scope);
-          })
-          .catch(function (error) {
-            console.log('Service worker registration failed: ', error);
-          });
-      }
-
-    // BeforeInstallPrompt
-
-      let deferredPrompt;
-      const addBtn = document.querySelector('#add-button');
-      const addBtnLink = document.querySelector('#add-button-link');
-
-      window.addEventListener('beforeinstallprompt', (e) => {
-        
-        // Prevent Chrome 67 and earlier from automatically showing the prompt
-          e.preventDefault();
-        
-        // Stash the event so it can be triggered later.
-          deferredPrompt = e;
-        
-        // Update UI to notify the user they can add to home screen
-          addBtn.innerHTML = '<a href="javascript:void(0);" id="add-button-link">Click here to install this website.</a>';
-
-        addBtn.addEventListener('click', (e) => {
-          // hide our user interface that shows our A2HS button
-          // addBtnLink.style.display = 'none';
-          // Show the prompt
-          deferredPrompt.prompt();
-          // Wait for the user to respond to the prompt
-          deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-              // console.log('User accepted the A2HS prompt');
-              addBtn.innerHTML = '<a href="javascript:void(0);">You installed this website.</a>';
-            } else {
-              // console.log('User dismissed the A2HS prompt');
-              addBtn.innerHTML = '<a href="javascript:void(0);">You chose not to install this website.</a>';
-            }
-            deferredPrompt = null;
-          });
-        });
-      });
-
-    // If the document is available...
-
-      $(document).ready(function() {
-          
-        console.log("Document ready!...");
- 
-      });
 
   </script>
 
