@@ -10,7 +10,7 @@ console.log('Service worker initialized...');
 
 // try { document.getElementById('cache').innerHTML = cacheName; } catch(err) { }
 
-const cacheName = '2.0.1';
+const cacheName = '2.0.2';
 const urlsToCache = [
   '/',
   'index.html',
