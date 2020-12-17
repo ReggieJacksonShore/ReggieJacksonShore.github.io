@@ -28,7 +28,7 @@ const urlsToCache = [
 
 self.addEventListener('install', function(event) {
 
-  
+  self.skipWaiting();
   console.log('Service worker opened install event initialized...');
 
   // Perform install steps
