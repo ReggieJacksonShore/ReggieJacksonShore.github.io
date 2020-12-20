@@ -65,7 +65,7 @@
 
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><!--  user-scalable=no -->
 <meta name="referrer" content="origin" />
 <meta name="robots" content="INDEX,FOLLOW" />
 <meta name="copyright" content=">&copy; Reggie Jackson Shore. All rights reserved." />
@@ -148,6 +148,7 @@
   nav { border-bottom: 0px solid #808080!important; }
 
   #mainNav { font-weight:700 !important; box-shadow:0 0 8px rgba(0, 0, 0, .75); }
+  #mainNav .navbar-nav>li.nav-item>a.nav-link { border-bottom:4px solid #2c3e50!important; }
   #mainNav .navbar-nav>li.nav-item>a.nav-link.active { background-color:transparent!important; color:#808080!important;border-radius:0!important; border-bottom:4px solid #808080!important; }
   #mainNav .navbar-nav>li.nav-item>a.nav-link:hover { border-bottom:0px solid #808080; }
   #mainNav .navbar-toggler { box-shadow:0 0 0 #808080 !important; background-color: #808080;}
@@ -733,10 +734,10 @@
             <a rel="noreferrer" href="https://aws.ReggieJacksonShore.com/" target="_blank"><b>aws cloud computing</b></a>
           </p>  
           <p class="lead mb-0">
-            <a rel="noreferrer" href="https://www.amazon.com/Reggie-Birthday-Reminder/dp/B083Z1CWCB/ref=sr_1_1?dchild=1&keywords=reggie+birthday+reminder&qid=1595640967&s=digital-skills&sr=1-1" target="_blank">Alexa Skills, Reggie Birthday Reminder</a>
+            <a rel="noreferrer" href="https://www.amazon.com/Reggie-Birthday-Reminder/dp/B083Z1CWCB/ref=sr_1_1?dchild=1&keywords=reggie+birthday+reminder&qid=1595640967&s=digital-skills&sr=1-1" target="_blank"><small>Alexa Skills, Reggie Birthday Reminder</small></a>
           </p>   
           <p class="lead mb-4">
-            <a rel="noreferrer" href="https://aws.amazon.com/lex/" target="_blank">Lex, Reggie Chatbot</a>
+            <a rel="noreferrer" href="https://aws.amazon.com/lex/" target="_blank"><small>Lex, Reggie Chatbot</small></a>
           </p>  
           <p class="lead mb-4">
             <a rel="noreferrer" href="https://azure.ReggieJacksonShore.com/" target="_blank"><b>azure cloud computing</b></a>
@@ -747,13 +748,13 @@
 
           <h3 class="text-camelcase mt-5 mb-4">Extras</h3>
           <p class="lead mb-4">
-            <a rel="noreferrer" href="https://reggiejacksonshore.blogspot.com/" target="_blank">https://reggiejacksonshore.blogspot.com</a>
+            <a rel="noreferrer" href="https://reggiejacksonshore.blogspot.com/" target="_blank"><small>https://reggiejacksonshore.blogspot.com</small></a>
           </p>  
           <p class="lead mb-4">
-            <a rel="noreferrer" href="https://reggiejacksonshore.wordpress.com/" target="_blank">https://reggiejacksonshore.wordpress.com</a>
+            <a rel="noreferrer" href="https://reggiejacksonshore.wordpress.com/" target="_blank"><small>https://reggiejacksonshore.wordpress.com</small></a>
           </p>  
           <p class="lead mb-0">
-            <a rel="noreferrer" href="http://react-redux-calculator.reggiejacksonshore.com/" target="_blank">http://react-redux-calculator.reggiejacksonshore.com/</a>
+            <a rel="noreferrer" href="http://react-redux-calculator.reggiejacksonshore.com/" target="_blank"><small>http://react-redux-calculator.reggiejacksonshore.com/</small></a>
           </p>  
 
         </div>
@@ -765,7 +766,7 @@
   <!-- Copyright Section -->
   <section class="copyright py-4 text-center text-white">
     <div class="container">
-      <small>&copy; Reggie Jackson Shore. All rights reserved. <span id="version">v2.0.4</span></small>
+      <small>&copy; Reggie Jackson Shore. All rights reserved. <span id="version">v2.1.0</span></small>
     </div>
   </section>
 
@@ -1621,6 +1622,9 @@
         navigator.serviceWorker.register('./sw.js')
           .then(function (registration) {
             console.log('Service worker registration successful with scope: ', registration.scope);
+          
+              registration.update();
+          
           })
           .catch(function (error) {
             console.log('Service worker registration failed: ', error);

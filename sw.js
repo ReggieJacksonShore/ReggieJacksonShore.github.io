@@ -10,7 +10,7 @@ console.log('Service worker initialized...');
 
 // try { document.getElementById('cache').innerHTML = cacheName; } catch(err) { }
 
-const cacheName = '2.0.4';
+const cacheName = '2.1.0';
 const urlsToCache = [
   '/',
   'index.html',
@@ -28,7 +28,6 @@ const urlsToCache = [
 
 self.addEventListener('install', function(event) {
 
-  self.skipWaiting();
   console.log('Service worker opened install event initialized...');
 
   // Perform install steps
